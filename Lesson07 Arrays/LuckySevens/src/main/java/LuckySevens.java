@@ -53,6 +53,7 @@ public class LuckySevens {
         for (int i = 0; i < moneyHeldArray.length; i++) { //What is the index of the max?
             if (moneyHeldArray[i] == max) {
                 indexOfMax = i;
+                break;
             }
         }
         

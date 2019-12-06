@@ -4,6 +4,7 @@
 
 import java.util.Scanner;
 import java.lang.Math;
+import java.text.DecimalFormat;
 
 public class InterestCalculator {
     public static void main(String[] args) {
@@ -31,11 +32,17 @@ public class InterestCalculator {
         double amountEndYeart = P * Math.pow(((1 + (r / n) )), (n * t));
         double profitEndYeart = amountEndYeart - P;
         
+        DecimalFormat df = new DecimalFormat("#.##");
+        String amountEndYearRounded = df.format(amountEndYear);
+        String profitEndYearRounded = df.format(profitEndYear);
+        String amountEndYeartRounded = df.format(amountEndYeart);
+        String profitEndYeartRounded = df.format(profitEndYeart);
+        
         System.out.println("\nYou chose to invest $" + P + " at an interest rate of " + r 
                 + " (compounded " + n + " time(s) per year) for " + t + " years.");
-        System.out.println("At the end of the first year, your new amount of money is $" + amountEndYear + 
-                ", which is a profit of $" + profitEndYear + ".");
-        System.out.println("At the end of the last year, your new amount of money is $" + amountEndYeart + 
-                ", which is a profit of $" + profitEndYeart + ".");
+        System.out.println("At the end of the first year, your new amount of money is $" + amountEndYearRounded + 
+                ", which is a profit of $" + profitEndYearRounded + ".");
+        System.out.println("At the end of the last year, your new amount of money is $" + amountEndYeartRounded + 
+                ", which is a profit of $" + profitEndYeartRounded + ".");
     }
 }
