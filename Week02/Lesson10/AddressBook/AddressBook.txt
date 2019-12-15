@@ -1,0 +1,2 @@
+Adams::Chuck::554::Windsor Way::Tampa::FL::34250
+Doe::John::24::Jay Street::Charlotte::New State::28270

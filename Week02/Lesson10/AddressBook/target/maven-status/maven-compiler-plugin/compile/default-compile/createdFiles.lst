@@ -1,0 +1,9 @@
+bl\addressbook\controller\AddressBookController.class
+bl\addressbook\ui\AddressBookView.class
+bl\addressbook\App.class
+bl\addressbook\dao\AddressBookDaoException.class
+bl\addressbook\ui\UserIO.class
+bl\addressbook\dao\AddressBookDao.class
+bl\addressbook\dto\Address.class
+bl\addressbook\ui\UserIOConsoleImpl.class
+bl\addressbook\dao\AddressBookDaoFileImpl.class

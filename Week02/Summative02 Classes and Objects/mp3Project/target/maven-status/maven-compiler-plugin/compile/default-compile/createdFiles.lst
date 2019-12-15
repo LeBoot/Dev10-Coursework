@@ -1,0 +1,9 @@
+bl\mp3project\dto\MP3File.class
+bl\mp3project\controller\mp3ProjectController.class
+bl\mp3project\ui\mp3ProjectUserIOImpl.class
+bl\mp3project\controller\dao\mp3ProjectDao.class
+bl\mp3project\App.class
+bl\mp3project\controller\dao\mp3ProjectDaoException.class
+bl\mp3project\controller\dao\mp3ProjectDaoFileImpl.class
+bl\mp3project\ui\mp3ProjectUserIO.class
+bl\mp3project\ui\mp3ProjectView.class
