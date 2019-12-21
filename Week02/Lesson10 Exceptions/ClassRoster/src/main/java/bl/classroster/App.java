@@ -6,9 +6,13 @@
 package bl.classroster;
 
 import bl.classroster.controller.ClassRosterController;
+import bl.classroster.dao.ClassRosterAuditDao;
+import bl.classroster.dao.ClassRosterAuditDaoFileImpl;
 import bl.classroster.dao.ClassRosterDao;
-import bl.classroster.dao.ClassRosterDaoException;
+import bl.classroster.dao.ClassRosterPersistenceException;
 import bl.classroster.dao.ClassRosterDaoFileImpl;
+import bl.classroster.service.ClassRosterServiceLayer;
+import bl.classroster.service.ClassRosterServiceLayerImpl;
 import bl.classroster.ui.ClassRosterView;
 import bl.classroster.ui.UserIO;
 import bl.classroster.ui.UserIOConsoleImpl;
@@ -18,15 +22,17 @@ import bl.classroster.ui.UserIOConsoleImpl;
  * @author Boone
  */
 public class App {
-    public static void main(String[] args) throws ClassRosterDaoException {
+    public static void main(String[] args) throws ClassRosterPersistenceException {
         
         //dependency injection
-        UserIO myIo = new UserIOConsoleImpl();
-        ClassRosterView myView = new ClassRosterView(myIo);
+        UserIO myIo = new UserIOConsoleImpl(); //instantiate UserIO iimplementation
+        ClassRosterView myView = new ClassRosterView(myIo); //Instantiate View and wire UserIO to it
         
-        //dependency injection
-        ClassRosterDao myDao = new ClassRosterDaoFileImpl();
-        ClassRosterController controller = new ClassRosterController(myDao, myView);
+        ClassRosterDao myDao = new ClassRosterDaoFileImpl(); //Instantiate DAO implementation
+        ClassRosterAuditDao myAuditDao = new ClassRosterAuditDaoFileImpl(); //instantiate auditDAO implementation
+        ClassRosterServiceLayer myService = new ClassRosterServiceLayerImpl(myDao, myAuditDao); //instantiate Service and wire DAO and auditDAO to it
+        
+        ClassRosterController controller = new ClassRosterController(myService, myView); //instantiate Controller and wire Service and View to it
         
         //run the controller
         controller.run();

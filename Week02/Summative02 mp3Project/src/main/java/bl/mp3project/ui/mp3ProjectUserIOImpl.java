@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class mp3ProjectUserIOImpl implements mp3ProjectUserIO {
 
-    Scanner sc = new Scanner(System.in);
+Scanner sc = new Scanner(System.in);
     
     @Override
     public void print(String message) {
@@ -21,20 +21,39 @@ public class mp3ProjectUserIOImpl implements mp3ProjectUserIO {
     
     @Override
     public double readDouble(String prompt) {
-        System.out.println(prompt);
-        String stringIn = sc.nextLine();
-        double numIn = Double.parseDouble(stringIn);
+        double numIn = 0;
+        boolean isInputGood = false;
+        do {
+            System.out.println(prompt);
+            String stringIn = sc.nextLine();
+            try {
+                numIn = Double.parseDouble(stringIn);
+                isInputGood = true;
+            } catch (NumberFormatException e) {
+                System.out.println("You must enter a number.");
+            }
+        } while (isInputGood == false);
         return numIn;
     }
 
     @Override
     public double readDouble(String prompt, double min, double max) {
         double numIn = 0;
+        boolean isInputGood = false;
         do {
             System.out.println(prompt);
             String stringIn = sc.nextLine();
-            numIn = Double.parseDouble(stringIn);
-        } while ((numIn < min) || (numIn > max));
+            try {
+                numIn = Double.parseDouble(stringIn);
+                if (numIn < min || numIn > max) {
+                    System.out.println("The number you enter must be between " + min + " and " + max + " (inclusively)");
+                } else {
+                    isInputGood = true;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("You must enter a number.");
+            }
+        } while (isInputGood == false || numIn < min || numIn > max);
         return numIn;
     }
 
@@ -59,20 +78,39 @@ public class mp3ProjectUserIOImpl implements mp3ProjectUserIO {
 
     @Override
     public int readInt(String prompt) {
-        System.out.println(prompt);
-        String stringIn = sc.nextLine();
-        int numIn = Integer.parseInt(stringIn);
+        int numIn = 0;
+        boolean isInputGood = false;
+        do {
+            System.out.println(prompt);
+            String stringIn = sc.nextLine();
+            try {
+                numIn = Integer.parseInt(stringIn);
+                isInputGood = true;
+            } catch (NumberFormatException e) {
+                System.out.println("You must enter an integer.");
+            } 
+        } while (isInputGood == false);
         return numIn;
     }
 
     @Override
     public int readInt(String prompt, int min, int max) {
         int numIn = 0;
+        boolean isInputGood = false;
         do {
             System.out.println(prompt);
             String stringIn = sc.nextLine();
-            numIn = Integer.parseInt(stringIn);
-        } while ((numIn < min) || (numIn > max));
+            try {
+                numIn = Integer.parseInt(stringIn);
+                if (numIn < min || numIn > max) {
+                    System.out.println("The number you enter must be between " + min + " and " + max + " (inclusively)");
+                } else {
+                    isInputGood = true;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("You must enter an integer.");
+            }
+        } while (isInputGood == false || numIn < min || numIn > max);
         return numIn;
     }
 

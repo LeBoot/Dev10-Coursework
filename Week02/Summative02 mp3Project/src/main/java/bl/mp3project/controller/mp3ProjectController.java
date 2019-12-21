@@ -9,7 +9,9 @@ import bl.mp3project.controller.dao.mp3ProjectDao;
 import bl.mp3project.controller.dao.mp3ProjectDaoException;
 import bl.mp3project.dto.MP3File;
 import bl.mp3project.ui.mp3ProjectView;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -53,6 +55,30 @@ public class mp3ProjectController {
                         searchForFile();
                         break;
                     case 7:
+                        listfilesbyAlbum();
+                        break;
+                    case 8:
+                        listfilesbyGenre();
+                        break;
+                    case 9:
+                        getAvgAge();
+                        break;
+                    case 10:
+                        getOldest();
+                        break;
+                    case 11:
+                        getNewest();
+                        break;
+                    case 12:
+                        getSinceNYears();
+                        break;
+                    case 13:
+                        searchForAlbum();
+                        break;
+                    case 14:
+                        listfilesByArtist();
+                        break;
+                    case 15:
                         keepGoing = false;
                         break;
                     default:
@@ -118,44 +144,114 @@ public class mp3ProjectController {
     
     private void editAFile() throws mp3ProjectDaoException { //switch case 3
         view.displayCommenceBanner("Edit MP3 file");
-        String titleToSearch = view.getChoiceForTitle();
-        
-        //remove from text file before editing
-        MP3File fileToEdit = dao.removeMP3File(titleToSearch);
+        String titleToSearch = view.getChoiceForTitle(); //return "bad value" if file is not found
         
         boolean isStillEditing = true;
-        int userSelection;
-        while (isStillEditing) {
-            userSelection = view.printMenuForEditing();
-            switch (userSelection) {
-                case 1: //edit release date
-                    String editedReleaseDate = view.newInfo("release date");
-                    fileToEdit.setReleaseDate(editedReleaseDate);
-                    break;
-                case 2: //edit album
-                    String editedAlbum = view.newInfo("album");
-                    fileToEdit.setAlbum(editedAlbum);
-                    break;
-                case 3: //edit genre
-                    String editedGenre = view.newInfo("genre");
-                    fileToEdit.setGenre(editedGenre);
-                    break;
-                case 4: //edit comment
-                    String editedComment = view.newInfo("comment(s)");
-                    fileToEdit.setComment(editedComment);
-                    break;
-                case 5: //done editing
-                    isStillEditing = false;
-                    break;
-                default:
-                    unknownCommand();
+        if (dao.getMP3File(titleToSearch) != null) {
+            MP3File fileToEdit = dao.removeMP3File(titleToSearch);
+        
+            int userSelection;
+            while (isStillEditing) {
+                userSelection = view.printMenuForEditing();
+                switch (userSelection) {
+                    case 1: //edit release date
+                        LocalDate editedReleaseDate = view.askForDate();
+                        fileToEdit.setReleaseDate(editedReleaseDate);
+                        break;
+                    case 2: //edit album
+                        String editedAlbum = view.newInfo("album");
+                        fileToEdit.setAlbum(editedAlbum);
+                        break;
+                    case 3: //edit genre
+                        String editedGenre = view.newInfo("genre");
+                        fileToEdit.setGenre(editedGenre);
+                        break;
+                    case 4: //edit comment
+                        String editedComment = view.newInfo("comment(s)");
+                        if ((editedComment == null) || editedComment.equals("")) {
+                            fileToEdit.setComment("No Comments");
+                        } else {
+                            fileToEdit.setComment(editedComment);
+                        }
+                        break;
+                    case 5: //edit artist
+                        String editedArtist = view.newInfo("artist");
+                        fileToEdit.setArtist(editedArtist);
+                        break;
+                    case 6: //done editing
+                        isStillEditing = false;
+                        break;
+                    default:
+                        unknownCommand();
+                }
             }
-        }
-        
-        //add edited MP3File back to text file
-        dao.addMP3File(titleToSearch, fileToEdit);
-        
-        view.displayConcludedBanner("Edit MP3 file");
-    }
 
+            //add edited MP3File back to text file
+            dao.addMP3File(titleToSearch, fileToEdit);
+
+            view.displayConcludedBanner("Edit MP3 file");
+        } else {
+            view.noTitle();
+        }
+    
+    }
+    
+    private void listfilesbyAlbum() throws mp3ProjectDaoException { //switch case 7
+        view.displayCommenceBanner("List MP3s by Album");
+        Map<String, List<MP3File>> mapOfFiles = dao.getMP3FilesInAnAlbum();
+        view.displayAllMP3sByAlbum(mapOfFiles);
+        view.displayConcludedBanner("List MP3s by Album");
+    }
+    
+    private void listfilesbyGenre() throws mp3ProjectDaoException { //switch case 8
+        view.displayCommenceBanner("List MP3s by Genre");
+        Map<String, List<MP3File>> mapOfFiles = dao.getMP3FilesInAGenre();
+        view.displayAllMP3sByGenre(mapOfFiles);
+        view.displayConcludedBanner("List MP3s by Genre");
+    }
+    
+    private void getAvgAge() throws mp3ProjectDaoException { //switch case 9
+        view.displayCommenceBanner("List average age of MP3");
+        double avgAge = dao.getAverageMP3Age();
+        view.displayAverageAge(avgAge);
+        view.displayConcludedBanner("List average age of MP3");
+    }
+    
+    private void getOldest() throws mp3ProjectDaoException { //switch case 10
+        view.displayCommenceBanner("List oldest MP3(s)");
+        List<MP3File> listOfFiles = dao.getOldestMP3File();
+        view.displayMP3(listOfFiles, "oldest");
+        view.displayConcludedBanner("List oldest MP3(s)");
+    }
+    
+    private void getNewest() throws mp3ProjectDaoException { //switch case 11
+        view.displayCommenceBanner("List newest MP3(s)");
+        List<MP3File> listOfFiles = dao.getNewestMP3File();
+        view.displayMP3(listOfFiles, "newest");
+        view.displayConcludedBanner("List newest MP3(s)");
+    }
+    
+    private void getSinceNYears() throws mp3ProjectDaoException { //switch case 12
+        view.displayCommenceBanner("List MP3s newer than a certain year");
+        long numOfYears = view.askForYears();
+        List<MP3File> newList = dao.getFilesOlderThan(numOfYears);
+        view.displayAllFiles(newList);
+        view.displayConcludedBanner("List MP3s newer than a certain year");
+    }
+    
+    private void searchForAlbum() throws mp3ProjectDaoException { //switch case 13
+        view.displayCommenceBanner("Search for an album");
+        String albumToFind = view.askForAlbum();
+        List<MP3File> newList = dao.filterByAlbum(albumToFind);
+        view.displayCommenceBanner(albumToFind);
+        view.displayAllFiles(newList);
+        view.displayConcludedBanner("Search for an album");
+    }
+    
+    private void listfilesByArtist() throws mp3ProjectDaoException { //switch case 14
+        view.displayCommenceBanner("List MP3s by artist");
+        Map<String, List<MP3File>> mapOfFiles = dao.getMP3FilesByAnArtist();
+        view.displayAllMP3sByArtist(mapOfFiles);
+        view.displayConcludedBanner("List MP3s by artist");
+    }
 }

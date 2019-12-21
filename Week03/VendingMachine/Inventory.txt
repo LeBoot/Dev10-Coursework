@@ -1,0 +1,16 @@
+pretzels 2::1.75::2
+pretzels 1::2.00::3
+chips 5::0.75::2
+chips 2::0.50::5
+chips 1::0.50::10
+chips 4::0.75::1
+chips 3::0.75::4
+candy bar 2::1.50::6
+candy bar 3::1.50::3
+candy bar 1::1.50::5
+candy bar 6::0.75::5
+candy bar 7::0.75::5
+candy bar 4::1.50::3
+candy bar 5::0.75::8
+trail mix 2::1.75::2
+trail mix 1::2.00::5

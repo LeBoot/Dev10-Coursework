@@ -5,6 +5,8 @@
  */
 package bl.addressbook.dto;
 
+import java.util.Objects;
+
 /**
  *
  * @author Boone
@@ -77,5 +79,56 @@ public class Address {
     public void setZip(String zip) {
         this.zip = zip;
     } 
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.lastName);
+        hash = 47 * hash + Objects.hashCode(this.firstName);
+        hash = 47 * hash + Objects.hashCode(this.houseNumber);
+        hash = 47 * hash + Objects.hashCode(this.houseStreet);
+        hash = 47 * hash + Objects.hashCode(this.cityName);
+        hash = 47 * hash + Objects.hashCode(this.stateName);
+        hash = 47 * hash + Objects.hashCode(this.zip);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Address other = (Address) obj;
+        if (!Objects.equals(this.lastName, other.lastName)) {
+            return false;
+        }
+        if (!Objects.equals(this.firstName, other.firstName)) {
+            return false;
+        }
+        if (!Objects.equals(this.houseNumber, other.houseNumber)) {
+            return false;
+        }
+        if (!Objects.equals(this.houseStreet, other.houseStreet)) {
+            return false;
+        }
+        if (!Objects.equals(this.cityName, other.cityName)) {
+            return false;
+        }
+        if (!Objects.equals(this.stateName, other.stateName)) {
+            return false;
+        }
+        if (!Objects.equals(this.zip, other.zip)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
     
 }

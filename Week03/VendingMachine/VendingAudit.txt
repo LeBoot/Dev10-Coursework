@@ -1,0 +1,10 @@
+2019-12-20T10:57:47.681078300 : pretzels 1 removed.  Quantity before removal: 4.  Quantity after removal: 3.
+2019-12-20T10:58:02.838568400 : pretzels 2 removed.  Quantity before removal: 5.  Quantity after removal: 4.
+2019-12-20T11:16:13.047356600 : chips 5 removed.  Quantity before removal: 1.  Quantity after removal: 0.
+2019-12-20T17:01:37.590213 : pretzels 2 removed.  Quantity before removal: 4.  Quantity after removal: 3.
+2019-12-20T17:02:36.570063 : chips 4 removed.  Quantity before removal: 1.  Quantity after removal: 0.
+2019-12-20T17:33:49.760553100 : trail mix 2 removed.  Quantity before removal: 3.  Quantity after removal: 2.
+2019-12-20T17:36:12.565702400 : chips 5 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T17:36:34.845324800 : candy bar 2 removed.  Quantity before removal: 7.  Quantity after removal: 6.
+2019-12-20T17:37:46.517761300 : chips 5 removed.  Quantity before removal: 1.  Quantity after removal: 0.
+2019-12-20T19:52:27.119817500 : pretzels 2 removed.  Quantity before removal: 3.  Quantity after removal: 2.

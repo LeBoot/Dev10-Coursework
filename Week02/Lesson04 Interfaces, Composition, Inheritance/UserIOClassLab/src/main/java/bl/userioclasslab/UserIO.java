@@ -8,6 +8,10 @@ public interface UserIO {
 
     void print(String message);
 
+    String readString(String prompt);
+    
+    String readStringAllowNoSpaces(String prompt);
+    
     double readDouble(String prompt);
 
     double readDouble(String prompt, double min, double max);
@@ -23,6 +27,5 @@ public interface UserIO {
     long readLong(String prompt);
 
     long readLong(String prompt, long min, long max);
-
-    String readString(String prompt);
+    
 }

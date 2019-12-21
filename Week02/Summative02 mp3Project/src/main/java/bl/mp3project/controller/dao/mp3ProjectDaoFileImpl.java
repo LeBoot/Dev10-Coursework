@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +20,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -64,6 +66,84 @@ public class mp3ProjectDaoFileImpl implements mp3ProjectDao {
         return mp3filesMap.get(title);
     }
     
+    @Override
+    public Map<String, List<MP3File>> getMP3FilesInAGenre() throws mp3ProjectDaoException {
+        loadMP3();
+        return mp3filesMap.values()
+                .stream()
+                .collect(Collectors.groupingBy(MP3File :: getGenre));
+    }
+    
+    @Override
+    public Map<String, List<MP3File>> getMP3FilesInAnAlbum() throws mp3ProjectDaoException {
+        loadMP3();
+        return mp3filesMap.values()
+                .stream()
+                .collect(Collectors.groupingBy(MP3File :: getAlbum));
+    }
+    
+    @Override
+    public Map<String, List<MP3File>> getMP3FilesByAnArtist() throws mp3ProjectDaoException {
+        loadMP3();
+        return mp3filesMap.values()
+                .stream()
+                .collect(Collectors.groupingBy(MP3File :: getArtist));
+    }
+    
+    @Override
+    public double getAverageMP3Age() throws mp3ProjectDaoException {
+        loadMP3();
+        return mp3filesMap.values()
+                .stream()
+                .mapToLong(MP3File :: getMP3Age)
+                .average()
+                .getAsDouble();
+    }
+    
+    @Override
+    public List<MP3File> getOldestMP3File() throws mp3ProjectDaoException {
+        loadMP3();
+        long oldestAge = mp3filesMap.values()
+                .stream()
+                .mapToLong(MP3File :: getMP3Age)
+                .max()
+                .getAsLong();
+        return mp3filesMap.values()
+               .stream()
+               .filter(f -> f.getMP3Age() == oldestAge)
+               .collect(Collectors.toList());
+    }
+    
+    @Override
+    public List<MP3File> getNewestMP3File() throws mp3ProjectDaoException {
+        loadMP3();
+        long youngestAge = mp3filesMap.values()
+                .stream()
+                .mapToLong(MP3File :: getMP3Age)
+                .min()
+                .getAsLong();
+        return mp3filesMap.values()
+               .stream()
+               .filter(f -> f.getMP3Age() == youngestAge)
+               .collect(Collectors.toList());
+    }
+    
+     
+    @Override
+    public List<MP3File> getFilesOlderThan(long ageInYears) throws mp3ProjectDaoException {
+        return mp3filesMap.values()
+                .stream()
+                .filter(f -> f.getMP3Age() < ageInYears)
+                .collect(Collectors.toList());
+    }
+    
+    @Override
+    public List<MP3File> filterByAlbum(String albumToFind) throws mp3ProjectDaoException {
+        return mp3filesMap.values()
+                .stream()
+                .filter(f -> f.getAlbum().equalsIgnoreCase(albumToFind))
+                .collect(Collectors.toList());
+    }
     
     
 //    
@@ -71,13 +151,13 @@ public class mp3ProjectDaoFileImpl implements mp3ProjectDao {
 //    
 //        For File Persistance
 //                
-//         Format= title::releaseDate::album::genre::comment   
+//         Format= title::releaseDate::album::genre::artist::comment   
 //                
                 
     
     //declare constants          
     public static final String DELIMITER = "::";
-    public static final String TEXT_FILE = "mp3TextFile.txt";
+    public static String textFile = "mp3TextFile.txt";
     
 
     //method to format the text string that will be retrieved when the text file is unmarshalled
@@ -91,15 +171,16 @@ public class mp3ProjectDaoFileImpl implements mp3ProjectDao {
         
         //Create a new MP3File object based on the just-retrieved title
         MP3File mp3FromTextFile = new MP3File(title);
-        
+                
         //complete the new MP3File with the appropriate setters
-        mp3FromTextFile.setReleaseDate(mp3Tokens[1]);
+        mp3FromTextFile.setReleaseDate(LocalDate.parse(mp3Tokens[1]));
         mp3FromTextFile.setAlbum(mp3Tokens[2]);
         mp3FromTextFile.setGenre(mp3Tokens[3]);
-        mp3FromTextFile.setComment(mp3Tokens[4]);
-        
+        mp3FromTextFile.setArtist(mp3Tokens[4]);
+        mp3FromTextFile.setComment(mp3Tokens[5]);
+
         //return the new MP3File
-        return mp3FromTextFile;        
+        return mp3FromTextFile;
     }
     
     
@@ -112,7 +193,7 @@ public class mp3ProjectDaoFileImpl implements mp3ProjectDao {
             //Scanner to read the file
             scanner = new Scanner (
                 new BufferedReader(
-                    new FileReader(TEXT_FILE)));
+                    new FileReader(textFile)));
         } catch (FileNotFoundException e) {
             throw new mp3ProjectDaoException ("Could not load from text file into memory", e);
         }
@@ -137,9 +218,10 @@ public class mp3ProjectDaoFileImpl implements mp3ProjectDao {
         
         //Place all components of address object into a giant string (in proper format)
         String mp3AsText = someMP3.getTitle() + DELIMITER;
-        mp3AsText += someMP3.getReleaseDate() + DELIMITER;
+        mp3AsText += someMP3.getReleaseDate().toString() + DELIMITER;
         mp3AsText += someMP3.getAlbum() + DELIMITER;
         mp3AsText += someMP3.getGenre() + DELIMITER;
+        mp3AsText += someMP3.getArtist() + DELIMITER;
         mp3AsText += someMP3.getComment(); //no delimiter on last bit of information
         
        //return MP3File as text
@@ -153,7 +235,7 @@ public class mp3ProjectDaoFileImpl implements mp3ProjectDao {
         PrintWriter out;
         
         try {
-            out = new PrintWriter(new FileWriter(TEXT_FILE));
+            out = new PrintWriter(new FileWriter(textFile));
         } catch (IOException e) {
             throw new mp3ProjectDaoException("Could not save data", e);
         }
