@@ -75,6 +75,15 @@ public class mp3ProjectDaoFileImpl implements mp3ProjectDao {
     }
     
     @Override
+    public Map<String, List<MP3File>> getMP3FilesInAGenreByArtist(String genre) throws mp3ProjectDaoException {
+        loadMP3();
+        return mp3filesMap.values()
+                .stream()
+                .filter(f -> f.getGenre().equalsIgnoreCase(genre))
+                .collect(Collectors.groupingBy(MP3File :: getArtist));
+    }
+    
+    @Override
     public Map<String, List<MP3File>> getMP3FilesInAnAlbum() throws mp3ProjectDaoException {
         loadMP3();
         return mp3filesMap.values()
@@ -131,6 +140,7 @@ public class mp3ProjectDaoFileImpl implements mp3ProjectDao {
      
     @Override
     public List<MP3File> getFilesOlderThan(long ageInYears) throws mp3ProjectDaoException {
+        loadMP3();
         return mp3filesMap.values()
                 .stream()
                 .filter(f -> f.getMP3Age() < ageInYears)
@@ -139,10 +149,27 @@ public class mp3ProjectDaoFileImpl implements mp3ProjectDao {
     
     @Override
     public List<MP3File> filterByAlbum(String albumToFind) throws mp3ProjectDaoException {
+        loadMP3();
         return mp3filesMap.values()
                 .stream()
                 .filter(f -> f.getAlbum().equalsIgnoreCase(albumToFind))
                 .collect(Collectors.toList());
+    }
+    
+    @Override
+    public double getAverageOfComments() throws mp3ProjectDaoException {
+        loadMP3();
+        long numFilesWithComment= mp3filesMap.values()
+                .stream()
+                .peek(f -> f.getComment())
+                .filter(f -> f.getComment() != null)
+                .count();
+        long numFilesTotal = mp3filesMap.values()
+                .stream()
+                .peek(f -> f.getComment())
+                .count();
+        double numAvg = numFilesWithComment / numFilesTotal;
+        return numAvg; 
     }
     
     

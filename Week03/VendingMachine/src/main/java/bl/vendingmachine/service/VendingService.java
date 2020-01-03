@@ -35,6 +35,8 @@ public interface VendingService {
     
     public EnumMap<Coins, Integer> calculateChange(BigDecimal userMoney, VendingItem item);
     
+    public EnumMap<Coins, Integer>calculateChangeInsufficientFunds(BigDecimal userMoney);
+    
     public void validateEnoughMoney(String userChoice, BigDecimal userMoney)
             throws //VendingPersistenceException,
                 InsufficientFundsException;

@@ -21,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -28,15 +30,18 @@ import org.junit.jupiter.api.Test;
  */
 public class ClassRosterServiceLayerTest {
     
-    //attribute and constructor
-    private ClassRosterServiceLayer service;    
-    public ClassRosterServiceLayerTest() {
-        ClassRosterDao dao = new ClassRosterDaoStubImpl(); //created a student with id "0001" to test against
-        ClassRosterAuditDao auditDao = new ClassRosterAuditDaoStubImpl();
-        
-        service = new ClassRosterServiceLayerImpl(dao, auditDao);
-    }
+//    //attribute and constructor
+//    private ClassRosterServiceLayer service;    
+//    public ClassRosterServiceLayerTest() {
+//        ClassRosterDao dao = new ClassRosterDaoStubImpl(); //created a student with id "0001" to test against
+//        ClassRosterAuditDao auditDao = new ClassRosterAuditDaoStubImpl();
+//        
+//        service = new ClassRosterServiceLayerImpl(dao, auditDao);
+//    }
     
+    ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+    ClassRosterServiceLayer service = ctx.getBean("serviceLayer", ClassRosterServiceLayer.class);
+
     @BeforeAll
     public static void setUpClass() {
     }

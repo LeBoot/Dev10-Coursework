@@ -7,6 +7,7 @@ package bl.vendingmachine.ui;
 
 import bl.vendingmachine.dto.VendingItem;
 import bl.vendingmachine.service.Coins;
+import java.math.BigDecimal;
 import java.util.EnumMap;
 import java.util.List;
 
@@ -59,6 +60,17 @@ public class VendingView {
         io.print("Your change is the following:");
         io.print("Quarters: " + numQuarters + "; Dimes: " + numDimes
             + "; Nickels: " + numNickels + "; Pennies: " + numPennies);
+    }
+    
+    public void displayOnlyChange(BigDecimal moneyEntered, EnumMap<Coins, Integer> map) {
+        int numQuarters = map.get(Coins.QUARTERS);
+        int numDimes = map.get(Coins.DIMES);
+        int numNickels = map.get(Coins.NICKELS);
+        int numPennies = map.get(Coins.PENNIES);
+        io.print("Your change is the following:");
+        io.print("Quarters: " + numQuarters + "; Dimes: " + numDimes
+            + "; Nickels: " + numNickels + "; Pennies: " + numPennies);
+        io.print("");
     }
     
     //methods that have non-void returns ---------------------------------------

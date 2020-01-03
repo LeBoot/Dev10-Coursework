@@ -1,0 +1,29 @@
+2019-12-20T13:49:30.365970100 : Test String
+2019-12-20T13:51:18.013605400 : Test String
+2019-12-20T14:57:56.457995200 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T15:00:22.417715300 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T15:02:33.867876500 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T15:03:51.457958400 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T15:06:50.645240800 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T15:07:18.517659900 : Test String
+2019-12-20T15:07:18.667391900 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T17:15:41.594341700 : Test String
+2019-12-20T17:15:41.837090600 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T17:16:27.565960300 : Test String
+2019-12-20T17:16:27.864736700 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T19:47:37.469940500 : Test String
+2019-12-20T19:47:37.730199200 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T19:49:07.451623 : Test String
+2019-12-20T19:49:07.717023 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T19:50:04.477283800 : Test String
+2019-12-20T19:50:04.751813600 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T19:51:55.591685500 : Test String
+2019-12-20T19:51:55.842339900 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-20T20:00:17.727504700 : Test String
+2019-12-20T20:00:17.959282 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-23T12:57:35.619514700 : Test String
+2019-12-23T12:57:36.320084900 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.
+2019-12-23T12:59:41.991499100 : Test String
+2019-12-30T09:35:26.089826600 : Test String
+2019-12-30T09:36:08.200946 : Test String
+2019-12-30T09:36:08.870021900 : item1 removed.  Quantity before removal: 2.  Quantity after removal: 1.

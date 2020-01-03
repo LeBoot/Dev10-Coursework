@@ -1,9 +1,17 @@
-C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\ClassRoster\src\main\java\bl\classroster\ui\UserIOConsoleImpl.java
-C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterDao.java
-C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterDaoException.java
-C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\ClassRoster\src\main\java\bl\classroster\ui\UserIO.java
-C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\ClassRoster\src\main\java\bl\classroster\App.java
-C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\ClassRoster\src\main\java\bl\classroster\dto\Student.java
-C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\ClassRoster\src\main\java\bl\classroster\ui\ClassRosterView.java
-C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\ClassRoster\src\main\java\bl\classroster\controller\ClassRosterController.java
-C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterDaoFileImpl.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\ui\UserIO.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterAuditDaoFileImpl.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\ui\ClassRosterView.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterDaoFileImpl.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\service\ClassRosterDuplicateIdException.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterPersistenceException.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\service\ClassRosterDataValidationException.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\App.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterDaoStubImpl.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\service\ClassRosterServiceLayerImpl.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\controller\ClassRosterController.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterDao.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterAuditDao.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\dto\Student.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\service\ClassRosterServiceLayer.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\ui\UserIOConsoleImpl.java
+C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster\src\main\java\bl\classroster\dao\ClassRosterAuditDaoStubImpl.java

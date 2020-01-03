@@ -153,6 +153,39 @@ public class VendingServiceImpl implements VendingService{
     }
     
     @Override
+    public EnumMap<Coins, Integer>calculateChangeInsufficientFunds(BigDecimal userMoney) {     
+        int numQuarters = 0;
+        int numDimes = 0;
+        int numNickels = 0;
+        int numPennies = 0;
+        
+        while (userMoney.compareTo(Coins.QUARTERS.getValue()) >= 0) {
+            numQuarters += 1;
+            userMoney = userMoney.subtract(Coins.QUARTERS.getValue());
+        }
+        while (userMoney.compareTo(Coins.DIMES.getValue()) >= 0) {
+            numDimes += 1;
+            userMoney = userMoney.subtract(Coins.DIMES.getValue());
+        }
+        while (userMoney.compareTo(Coins.NICKELS.getValue()) >= 0) {
+            numNickels += 1;
+            userMoney = userMoney.subtract(Coins.NICKELS.getValue());
+        }
+        while (userMoney.compareTo(Coins.PENNIES.getValue()) >= 0) {
+            numPennies += 1;
+            userMoney = userMoney.subtract(Coins.PENNIES.getValue());
+        }
+        
+        EnumMap<Coins, Integer> mapOfCoins = new EnumMap<>(Coins.class);
+        mapOfCoins.put(Coins.QUARTERS, numQuarters);
+        mapOfCoins.put(Coins.DIMES, numDimes);
+        mapOfCoins.put(Coins.NICKELS, numNickels);
+        mapOfCoins.put(Coins.PENNIES, numPennies);
+        
+        return mapOfCoins;
+    }
+    
+    @Override
     public void validateEnoughMoney(String userChoice, BigDecimal userMoney) throws InsufficientFundsException {
         VendingItem item = dao.getItem(userChoice);
         BigDecimal itemPrice = item.getPriceOfItem();

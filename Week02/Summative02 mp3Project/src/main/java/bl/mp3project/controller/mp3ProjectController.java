@@ -12,6 +12,7 @@ import bl.mp3project.ui.mp3ProjectView;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -79,6 +80,9 @@ public class mp3ProjectController {
                         listfilesByArtist();
                         break;
                     case 15:
+                        listAverageComments();
+                        break;
+                    case 16:
                         keepGoing = false;
                         break;
                     default:
@@ -205,8 +209,25 @@ public class mp3ProjectController {
     
     private void listfilesbyGenre() throws mp3ProjectDaoException { //switch case 8
         view.displayCommenceBanner("List MP3s by Genre");
-        Map<String, List<MP3File>> mapOfFiles = dao.getMP3FilesInAGenre();
-        view.displayAllMP3sByGenre(mapOfFiles);
+        
+        //this map will be a have keyset of all the genres
+        Map<String, List<MP3File>> mapByGenre = dao.getMP3FilesInAGenre();
+        
+        //take all the genres into a list that can be iterated through
+        Set<String> setOfGenres = mapByGenre.keySet();
+        
+        //for each genre that exists...
+        for (String genre : setOfGenres) {
+            view.printToScreen("");
+            view.printToScreen("========= " + genre + " =========");
+            //get a map, with each key being a unique genre, and its value being a list of
+                //all the MP3Files by a given artist (within the genre determined by the key)
+            Map<String, List<MP3File>> mapOfFiles = dao.getMP3FilesInAGenreByArtist(genre);
+            
+            //print to screen
+            view.displayAllMP3sByArtist(mapOfFiles);
+
+        }        
         view.displayConcludedBanner("List MP3s by Genre");
     }
     
@@ -253,5 +274,12 @@ public class mp3ProjectController {
         Map<String, List<MP3File>> mapOfFiles = dao.getMP3FilesByAnArtist();
         view.displayAllMP3sByArtist(mapOfFiles);
         view.displayConcludedBanner("List MP3s by artist");
+    }
+    
+    private void listAverageComments() throws mp3ProjectDaoException { //switch case 15
+        view.displayCommenceBanner("Display Average Comments");
+        double answer = dao.getAverageOfComments();
+        view.displayAverageComment(answer);
+        view.displayConcludedBanner("Display Average Comments");
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="bl.vendingmachine.service.VendingServiceTest" time="0.026" tests="14" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="bl.vendingmachine.service.VendingServiceTest" time="0.023" tests="14" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.5+10"/>
     <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.5.10-hotspot\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\VendingMachine"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week03\VendingMachine"/>
     <property name="java.vm.vendor" value="AdoptOpenJDK"/>
     <property name="java.vendor.url" value="https://adoptopenjdk.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\VendingMachine"/>
+    <property name="user.dir" value="C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week03\VendingMachine"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="11.0.5+10"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -62,17 +62,17 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase name="testCalculateChange" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
-  <testcase name="testConvertUserMoneyToBD" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
+  <testcase name="testConvertUserMoneyToBD" classname="bl.vendingmachine.service.VendingServiceTest" time="0.001"/>
   <testcase name="testGetAllItems" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
   <testcase name="testGetItemsToDisplay" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
   <testcase name="testValidateChoiceOrExit" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
   <testcase name="testGetItem" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
   <testcase name="testValidateEnoughMoney" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
-  <testcase name="testRemoveItem" classname="bl.vendingmachine.service.VendingServiceTest" time="0.014"/>
+  <testcase name="testRemoveItem" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
   <testcase name="testEditUserPurchaseAnother" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
   <testcase name="testGetAllItemsNonZero" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
-  <testcase name="testValidatePurchaseAnother" classname="bl.vendingmachine.service.VendingServiceTest" time="0.003"/>
+  <testcase name="testValidatePurchaseAnother" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
   <testcase name="testValidateMoneyOrExit" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
-  <testcase name="testWriteAndLoadTextFile" classname="bl.vendingmachine.service.VendingServiceTest" time="0.004"/>
+  <testcase name="testWriteAndLoadTextFile" classname="bl.vendingmachine.service.VendingServiceTest" time="0.02"/>
   <testcase name="testEditUserChoice" classname="bl.vendingmachine.service.VendingServiceTest" time="0"/>
 </testsuite>

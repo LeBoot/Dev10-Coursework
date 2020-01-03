@@ -105,8 +105,10 @@ public class VendingController {
             EnumMap<Coins, Integer> mapOfChange = service.calculateChange(userMoney, itemToPurchase);
             view.displayItemAndChange(itemToPurchase, mapOfChange);
         } catch (InsufficientFundsException e) {
+            EnumMap<Coins, Integer> mapOfChange = service.calculateChangeInsufficientFunds(userMoney);
             view.displayErrorMessage("You do not have enough money to purchase that item.  You only entered " 
                     + userMoney + " dollars.");
+            view.displayOnlyChange(userMoney, mapOfChange);
         }
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="bl.classroster.dao.ClassRosterDaoTest" time="0.143" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="bl.classroster.dao.ClassRosterDaoTest" time="0.252" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.5+10"/>
@@ -14,7 +14,6 @@
     <property name="user.script" value=""/>
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="test" value="bl.classroster.dao.ClassRosterDaoTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\Boone\Desktop\SoftwareGuild\Dev10-Coursework\Week02\Lesson10 Exceptions\ClassRoster"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
@@ -45,7 +44,7 @@
     <property name="java.class.path" value="C:\Users\Boone\Documents\netbeans\java\maven\boot\plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=bl.classroster.dao.ClassRosterDaoTest -Dmaven.ext.class.path=C:\Users\Boone\Documents\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Users\Boone\Documents\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
     <property name="java.home" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.5.10-hotspot"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -63,8 +62,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="bl.classroster.dao.ClassRosterDaoTest" name="bl.classroster.dao.ClassRosterDaoTest.testAddGetStudent" time="0.12"/>
-  <testcase classname="bl.classroster.dao.ClassRosterDaoTest" name="bl.classroster.dao.ClassRosterDaoTest.testRemoveStudent" time="0.017"/>
-  <testcase classname="bl.classroster.dao.ClassRosterDaoTest" name="bl.classroster.dao.ClassRosterDaoTest.testGetAllStudents" time="0.006"/>
+  <testcase classname="bl.classroster.dao.ClassRosterDaoTest" name="bl.classroster.dao.ClassRosterDaoTest.testAddGetStudent" time="0.219"/>
+  <testcase classname="bl.classroster.dao.ClassRosterDaoTest" name="bl.classroster.dao.ClassRosterDaoTest.testRemoveStudent" time="0.023"/>
   <testcase classname="bl.classroster.dao.ClassRosterDaoTest" name="bl.classroster.dao.ClassRosterDaoTest.testGetStudent" time="0"/>
+  <testcase classname="bl.classroster.dao.ClassRosterDaoTest" name="bl.classroster.dao.ClassRosterDaoTest.testGetAllStudents" time="0.01"/>
 </testsuite>

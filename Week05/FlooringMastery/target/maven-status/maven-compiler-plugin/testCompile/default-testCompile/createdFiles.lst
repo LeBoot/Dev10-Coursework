@@ -1,0 +1,6 @@
+bl\flooringmastery\dao\OrderNumbersDaoTest.class
+bl\flooringmastery\dao\ProductInfoDaoTest.class
+bl\flooringmastery\dao\FlooringAuditDaoTest.class
+bl\flooringmastery\dao\FlooringOrderDaoTest.class
+bl\flooringmastery\service\FlooringServiceTest.class
+bl\flooringmastery\dao\StateTaxesDaoTest.class

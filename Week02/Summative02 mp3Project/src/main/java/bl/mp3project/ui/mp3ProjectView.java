@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -42,9 +43,10 @@ public class mp3ProjectView {
         io.print("12. List files older than a certain year");
         io.print("13. Search for an album");
         io.print("14. List files by artist");
-        io.print("15. Exit");
+        io.print("15. List average of files with comments");
+        io.print("16. Exit");
 	
-        return io.readInt("Please select from the above choices.", 1, 15);
+        return io.readInt("Please select from the above choices.", 1, 16);
     }
     
     public int printMenuForEditing() {
@@ -189,45 +191,21 @@ public class mp3ProjectView {
         io.print("The average age of all the MP3s (by year) is " + age);
     }
     
+
     public void displayAllMP3sByGenre(Map<String, List<MP3File>> mapOfGenres) {
-        Set<String> allGenres = mapOfGenres.keySet();
+        
+        //collect the names of all the genres
+        Set<String> allGenres = mapOfGenres.keySet();        
         allGenres.stream()
                 .forEach(genre -> {
                     io.print("");
-                    io.print("=========");
+                    io.print("====================");
                     io.print("Genre: " + genre);
                     mapOfGenres.get(genre).stream()
-                            .forEach(t -> io.print(t.getTitle()));         
+                            .forEach(t -> io.print(t.getTitle()));
                 });
     }
-    
-    
-    
-    //Still working on making this one work; then, it will replace the above method
-    public void displayAllMP3sByGenre2(Map<String, List<MP3File>> mapOfGenres) {
-        Set<String> allGenres = mapOfGenres.keySet();
-        allGenres.stream()
-                .forEach(genre -> {
-                    io.print("");
-                    io.print("=========");
-                    io.print("Genre: " + genre);
-                    mapOfGenres.get(genre)
-                            .stream()
-                            .forEach(a -> {
-                                Map<String, List<MP3File>> newMap = new HashMap<>();
-                                io.print("Artist: " + a.getArtist());
-                                List<MP3File> artistList = new ArrayList<>();
-                                artistList.add(a);
-                                newMap.put(a.getArtist(), artistList);
-                                        newMap.get(a.getArtist())
-                                                .stream()
-                                                .forEach(song -> io.print("Song: " + song.getTitle()));
-                                        
-                                                                        
-                                
-                            });
-                });
-    }
+
     
     public void displayAllMP3sByAlbum(Map<String, List<MP3File>> mapOfFiles) {
         Set<String> allAlbums = mapOfFiles.keySet();
@@ -264,5 +242,13 @@ public class mp3ProjectView {
                     mapOfFiles.get(artist).stream()
                             .forEach(t -> io.print(t.getTitle()));         
                 });
+    }
+    
+    public void displayAverageComment(double answer) {
+        io.print(answer + " files have comments associated with them.");
+    }
+    
+    public void printToScreen(String prompt) {
+        io.print(prompt);
     }
 }

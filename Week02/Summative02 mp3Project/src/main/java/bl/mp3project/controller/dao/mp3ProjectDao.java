@@ -25,6 +25,8 @@ public interface mp3ProjectDao {
     
     Map<String, List<MP3File>> getMP3FilesInAGenre() throws mp3ProjectDaoException;
     
+    Map<String, List<MP3File>> getMP3FilesInAGenreByArtist(String genre) throws mp3ProjectDaoException;
+    
     Map<String, List<MP3File>> getMP3FilesInAnAlbum() throws mp3ProjectDaoException;
     
     Map<String, List<MP3File>> getMP3FilesByAnArtist() throws mp3ProjectDaoException;
@@ -38,5 +40,7 @@ public interface mp3ProjectDao {
     List<MP3File> getFilesOlderThan(long ageInYears) throws mp3ProjectDaoException;
     
     List<MP3File> filterByAlbum(String albumToFind) throws mp3ProjectDaoException;
+    
+    double getAverageOfComments() throws mp3ProjectDaoException;
     
 }
