@@ -30,6 +30,9 @@ public interface MasterUserIO {
     public String readStringNoColon(String prompt);
     public String readStringNoBlankOrNullOrColon(String prompt);
     public String readStringOrEnterKeyNoColon(String prompt);
+    public String readStringNoDelimiter(String prompt, String delimiter);
+    public String readStringNoBlankOrNullOrDelimiter(String prompt, String delimiter);
+    public String readStringOrEnterNoDelimiter(String prompt, String delimiter);
     
     //number readers -----------------------------------------------------------
     //--------------------------------------------------------------------------

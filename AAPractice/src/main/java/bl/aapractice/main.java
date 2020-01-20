@@ -22,7 +22,7 @@ public class main {
         MasterUserIO io = new MasterUserIOImpl();
         String prompt = "Type input: ";
         
-        BigDecimal input = io.readBigDecimalLessThanOrEqualTo(prompt, BigDecimal.TEN);
+        String input = io.readStringNoBlankOrNullOrDelimiter(prompt, "abcd");
         
         System.out.println("");
         System.out.println(input);

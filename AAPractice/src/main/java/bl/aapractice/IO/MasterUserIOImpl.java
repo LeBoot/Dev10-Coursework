@@ -217,6 +217,78 @@ Scanner sc = new Scanner(System.in);
         return stringIn;
     }
     
+    @Override
+    public String readStringNoDelimiter(String prompt, String delimiter) {
+        String stringIn = "Default String--- This is an bug in the IO method";
+        boolean isInputValid = true;
+        do {
+            System.out.println(prompt);
+            stringIn = sc.nextLine();
+            isInputValid = true;
+            if (stringIn.contains(delimiter)) {
+                isInputValid = false;
+                System.out.println("Sorry, but your input cannot contain '" + delimiter + "'.");
+            }
+        } while (!isInputValid);   
+        return stringIn;
+    }
+    
+    @Override
+    public String readStringNoBlankOrNullOrDelimiter(String prompt, String delimiter) {
+        String stringIn = "Default String--- This is an bug in the IO method";
+        boolean isInputValid;
+        do {
+            try {
+                do {
+                    isInputValid = true;
+                    System.out.println(prompt);
+                    stringIn = sc.nextLine();
+                    if ((stringIn.trim().length() == 0) || ((stringIn.isBlank() || (stringIn.isEmpty())))) {
+                        isInputValid = false;
+                        System.out.println("Input cannot be blank.");
+                    } else if (stringIn.contains(delimiter)) {
+                        isInputValid = false;
+                        System.out.println("Sorry, but your input cannot contain '" + delimiter + "'.");
+                    }
+                } while (!isInputValid);
+            } catch (NullPointerException e) {
+                isInputValid = false;
+                System.out.println("Input cannot be blank.");
+            }
+        } while (!isInputValid);
+        return stringIn;
+    }
+    
+    @Override
+    public String readStringOrEnterNoDelimiter(String prompt, String delimiter) {
+        String stringIn = "Default String--- This is an bug in the IO method";
+        boolean isInputValid;
+        do {
+            try {
+                do {
+                    isInputValid = true;
+                    System.out.println(prompt);
+                    stringIn = sc.nextLine();
+                    if (stringIn.isEmpty()) {
+                        stringIn = "returnKeyEntered";
+                    }
+                    else if ((stringIn.trim().length() == 0) || (stringIn.trim().equals("returnKeyEntered"))) {
+                        isInputValid = false;
+                        System.out.println("That was invalid input.");
+                    } else if (stringIn.contains(delimiter)) {
+                        isInputValid = false;
+                        System.out.println("Sorry, but your input cannot contain '" + delimiter + "'.");
+                    }
+                } while (!isInputValid);
+            } catch (NullPointerException e) {
+                System.out.println("That was invalid input.");
+                isInputValid = false;
+            }
+        } while (!isInputValid);
+        return stringIn;
+    }
+    
+ 
     
     //number readers -----------------------------------------------------------
     //--------------------------------------------------------------------------

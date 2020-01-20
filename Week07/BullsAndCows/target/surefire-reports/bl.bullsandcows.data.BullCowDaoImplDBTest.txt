@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: bl.bullsandcows.data.BullCowDaoImplDBTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 3, Errors: 3, Skipped: 0, Time elapsed: 5.242 s <<< FAILURE! - in bl.bullsandcows.data.BullCowDaoImplDBTest
+testGetAllGames  Time elapsed: 1.106 s  <<< FAILURE!
+java.lang.AssertionError
+	at bl.bullsandcows.data.BullCowDaoImplDBTest.testGetAllGames(BullCowDaoImplDBTest.java:95)
+
+testUpdateGame  Time elapsed: 0.06 s  <<< ERROR!
+java.lang.NullPointerException
+	at bl.bullsandcows.data.BullCowDaoImplDBTest.testUpdateGame(BullCowDaoImplDBTest.java:111)
+
+testDeleteGameById  Time elapsed: 0.051 s  <<< FAILURE!
+java.lang.AssertionError
+	at bl.bullsandcows.data.BullCowDaoImplDBTest.testDeleteGameById(BullCowDaoImplDBTest.java:173)
+
+testDeleteRoundByGameId  Time elapsed: 0.221 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT INTO allRounds (TimeOfGuess, RoundResults, Guess, GameID) VALUES (?, ?, ?, ?);]; Cannot add or update a child row: a foreign key constraint fails (`bullsandcowstestdb`.`allrounds`, CONSTRAINT `allrounds_ibfk_1` FOREIGN KEY (`GameID`) REFERENCES `games` (`GameID`)); nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`bullsandcowstestdb`.`allrounds`, CONSTRAINT `allrounds_ibfk_1` FOREIGN KEY (`GameID`) REFERENCES `games` (`GameID`))
+	at bl.bullsandcows.data.BullCowDaoImplDBTest.testDeleteRoundByGameId(BullCowDaoImplDBTest.java:193)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`bullsandcowstestdb`.`allrounds`, CONSTRAINT `allrounds_ibfk_1` FOREIGN KEY (`GameID`) REFERENCES `games` (`GameID`))
+	at bl.bullsandcows.data.BullCowDaoImplDBTest.testDeleteRoundByGameId(BullCowDaoImplDBTest.java:193)
+
+testAddGameANDgetGameByID  Time elapsed: 0.02 s  <<< FAILURE!
+java.lang.AssertionError: expected:<bl.bullsandcows.models.BullCowGameObject@8ffe768> but was:<null>
+	at bl.bullsandcows.data.BullCowDaoImplDBTest.testAddGameANDgetGameByID(BullCowDaoImplDBTest.java:75)
+
+testAddRoundANDGetAllRoundsByGameID  Time elapsed: 0.02 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT INTO allRounds (TimeOfGuess, RoundResults, Guess, GameID) VALUES (?, ?, ?, ?);]; Cannot add or update a child row: a foreign key constraint fails (`bullsandcowstestdb`.`allrounds`, CONSTRAINT `allrounds_ibfk_1` FOREIGN KEY (`GameID`) REFERENCES `games` (`GameID`)); nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`bullsandcowstestdb`.`allrounds`, CONSTRAINT `allrounds_ibfk_1` FOREIGN KEY (`GameID`) REFERENCES `games` (`GameID`))
+	at bl.bullsandcows.data.BullCowDaoImplDBTest.testAddRoundANDGetAllRoundsByGameID(BullCowDaoImplDBTest.java:127)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`bullsandcowstestdb`.`allrounds`, CONSTRAINT `allrounds_ibfk_1` FOREIGN KEY (`GameID`) REFERENCES `games` (`GameID`))
+	at bl.bullsandcows.data.BullCowDaoImplDBTest.testAddRoundANDGetAllRoundsByGameID(BullCowDaoImplDBTest.java:127)
+
