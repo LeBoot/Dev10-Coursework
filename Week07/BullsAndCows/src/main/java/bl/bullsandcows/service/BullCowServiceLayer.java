@@ -21,14 +21,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class BullCowServiceLayer implements BullCowService {
     
-    private final BullCowDao dao;
+  
 
     //CONSTRUCTOR --------------------------------------------------------------
     //Can take BullCow (impl) as a dependency because that class was marked with "@Repository"
     @Autowired
-    public BullCowServiceLayer(BullCowDao dao) {
-        this.dao = dao;
-    }
+    BullCowDao dao;
+    
     
     /*
     Pass through methods to DAO ------------------------------------------------
@@ -117,53 +116,20 @@ public class BullCowServiceLayer implements BullCowService {
         int numExact = 0;
         int numPartial = 0;
         
-        //break apart answer
-        String[] dissectedAnswer = new String[4];
-        dissectedAnswer[0] = answer.substring(0, 1);
-        dissectedAnswer[1] = answer.substring(1, 2);
-        dissectedAnswer[2] = answer.substring(2, 3);
-        dissectedAnswer[3] = answer.substring(3, 4);
-        
-        //break apart guess
-        String[] dissectedGuess = new String[4];
-        dissectedGuess[0] = guess.substring(0, 1);
-        dissectedGuess[1] = guess.substring(1, 2);
-        dissectedGuess[2] = guess.substring(2, 3);
-        dissectedGuess[3] = guess.substring(3, 4);
-        
-        //calculate exact matches
         for (int i = 0; i < 4; i++) {
-            if (dissectedGuess[i].equalsIgnoreCase(dissectedAnswer[i])) {
+            //calculate exact matches
+            if (guess.charAt(i) == answer.charAt(i)) {
                 numExact++;
             }
-        }
-        
-        //calculate partial matches
-        if ((dissectedGuess[0].equalsIgnoreCase(dissectedAnswer[1])) ||
-                (dissectedGuess[0].equalsIgnoreCase(dissectedAnswer[2])) ||
-                (dissectedGuess[0].equalsIgnoreCase(dissectedAnswer[3]))) {
-            numPartial++;
-        }
-        if ((dissectedGuess[1].equalsIgnoreCase(dissectedAnswer[0])) ||
-                (dissectedGuess[1].equalsIgnoreCase(dissectedAnswer[2])) ||
-                (dissectedGuess[1].equalsIgnoreCase(dissectedAnswer[3]))) {
-            numPartial++;
-        }
-        if ((dissectedGuess[2].equalsIgnoreCase(dissectedAnswer[0])) ||
-                (dissectedGuess[2].equalsIgnoreCase(dissectedAnswer[1])) ||
-                (dissectedGuess[2].equalsIgnoreCase(dissectedAnswer[3]))) {
-            numPartial++;
-        }
-        if ((dissectedGuess[3].equalsIgnoreCase(dissectedAnswer[0])) ||
-                (dissectedGuess[3].equalsIgnoreCase(dissectedAnswer[1])) ||
-                (dissectedGuess[3].equalsIgnoreCase(dissectedAnswer[2]))) {
-            numPartial++;
-        }
+            //calculate partial matches
+            else if (answer.contains(String.valueOf(guess.charAt(i)))) {
+                numPartial++;
+            }
+        }        
         
         //return results
         String results = "e:" + numExact + ":p:" + numPartial;
         return results;
-  
     }
     
     @Override

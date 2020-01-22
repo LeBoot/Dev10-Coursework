@@ -44,9 +44,9 @@ public class BullCowGameObject {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 97 * hash + this.gameID;
-        hash = 97 * hash + Objects.hashCode(this.answer);
-        hash = 97 * hash + Objects.hashCode(this.status);
+        hash = 61 * hash + this.gameID;
+        hash = 61 * hash + Objects.hashCode(this.answer);
+        hash = 61 * hash + Objects.hashCode(this.status);
         return hash;
     }
 
@@ -73,6 +73,8 @@ public class BullCowGameObject {
         }
         return true;
     }
+
+    
     
     
 

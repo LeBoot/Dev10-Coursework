@@ -107,7 +107,7 @@ public class BullCowDaoImplDB implements BullCowDao {
     @Override
     @Transactional
     public List<BullCowRoundObject> getAllRoundsByGameID(int gameID) {
-        final String sql = "SELECT RoundID, TimeOfGuess, RoundResults, Guess, GameID "
+        final String sql = "SELECT * "
                 + "FROM allRounds WHERE GameID = ?;";
         return jdbc.query(sql, new RoundMapper(), gameID);
     }

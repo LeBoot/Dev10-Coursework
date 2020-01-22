@@ -30,14 +30,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/BullCow")
 public class BullCowController {
     
-    private final BullCowService service;
+
 
     //CONSTRUCTOR --------------------------------------------------------------
     //Can take BullCow (impl) as a dependency because that class was marked with "@Repository"
     @Autowired
-    public BullCowController(BullCowService service) {
-        this.service = service;
-    }
+    BullCowService service;
     
     @PostMapping("/begin")
     @ResponseStatus(HttpStatus.CREATED)
@@ -77,7 +75,7 @@ public class BullCowController {
             //generate new round object
             BullCowRoundObject round = new BullCowRoundObject();
             //add info to that round object
-            round.setTimeOfGuess(LocalDateTime.now());
+            round.setTimeOfGuess(LocalDateTime.now().withNano(0));
             round.setRoundResults(results);
             round.setGuess(guess);
             round.setGameID(gameID);

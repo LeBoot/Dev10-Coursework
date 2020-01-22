@@ -9,13 +9,14 @@ import bl.bullsandcows.data.BullCowDao;
 import bl.bullsandcows.models.BullCowGameObject;
 import bl.bullsandcows.models.BullCowRoundObject;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -23,6 +24,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+
 
 /**
  *
@@ -60,6 +63,11 @@ public class BullCowServiceTest {
     
     @After
     public void tearDown() {
+        List<BullCowGameObject> games = dao.getAllGames();
+        for (BullCowGameObject game : games) {
+            dao.deleteRoundByGameId(game.getGameID());
+            dao.deleteGameById(game.getGameID());
+        } 
     }
 
     /*
@@ -69,52 +77,65 @@ public class BullCowServiceTest {
     public void testAddGameANDGetGameByID() {
         //make and add a new game
         BullCowGameObject newGame = new BullCowGameObject();
-        newGame.setGameID(1);
         newGame.setAnswer("1234");
-        service.addGame(newGame);
-        
+        newGame = service.addGame(newGame);
+
         //retrieve game
         BullCowGameObject gameFromDao = service.getGameById(newGame.getGameID(), false);
-        
+
         //assert that game added and game retrieved are the same
         assertEquals(newGame, gameFromDao);
     }
 
     @Test
     public void testAddRoundANDGetAllRoundsByGameID() {
+        //make and add two games
+        BullCowGameObject game1 = new BullCowGameObject();
+        game1.setAnswer("1234");
+        game1 = service.addGame(game1);
+
+        List<BullCowRoundObject> testGame1 = new ArrayList<>();
+
+        BullCowGameObject game2 = new BullCowGameObject();
+        game2.setAnswer("4321");
+        game2 = service.addGame(game2);
+
         //make and add two rounds, each for the same game
         BullCowRoundObject round1 = new BullCowRoundObject();
-        round1.setGameID(1);
+        round1.setGameID(game1.getGameID());
         round1.setGuess("1234");
         round1.setRoundResults("e:0:p:0");
-        round1.setTimeOfGuess(LocalDateTime.now());
+        round1.setTimeOfGuess(LocalDateTime.now().withNano(0));
         service.addRound(round1);
-        
+        testGame1.add(round1);
+
         BullCowRoundObject round2 = new BullCowRoundObject();
-        round2.setGameID(1);
+        round2.setGameID(game1.getGameID());
         round2.setGuess("1234");
         round2.setRoundResults("e:0:p:0");
-        round2.setTimeOfGuess(LocalDateTime.now());
+        round2.setTimeOfGuess(LocalDateTime.now().withNano(0));
         service.addRound(round2);
-        
+        testGame1.add(round2);
+
         //make and add one round, for a different game than the first two rounds
         BullCowRoundObject round3 = new BullCowRoundObject();
-        round3.setGameID(2);
+        round3.setGameID(game2.getGameID());
         round3.setGuess("1234");
         round3.setRoundResults("e:0:p:0");
-        round3.setTimeOfGuess(LocalDateTime.now());
+        round3.setTimeOfGuess(LocalDateTime.now().withNano(0));
         service.addRound(round3);
-        
+
         //call getAllRounds method
-        List<BullCowRoundObject> listGame1 = service.getAllRoundsByGameID(1);
-        List<BullCowRoundObject> listGame2 = service.getAllRoundsByGameID(2);
-        
+        List<BullCowRoundObject> listGame1 = service.getAllRoundsByGameID(game1.getGameID());
+        List<BullCowRoundObject> listGame2 = service.getAllRoundsByGameID(game2.getGameID());
+
         //assertions
+        assertEquals(testGame1, listGame1);
         assertEquals(2, listGame1.size());
         assertTrue(listGame1.contains(round1));
         assertTrue(listGame1.contains(round2));
         assertFalse(listGame1.contains(round3));
-        
+
         assertEquals(1, listGame2.size());
         assertFalse(listGame2.contains(round1));
         assertFalse(listGame2.contains(round2));
@@ -125,16 +146,15 @@ public class BullCowServiceTest {
     public void testUpdateGame() {
         //make and add a new game
         BullCowGameObject newGame = new BullCowGameObject();
-        newGame.setGameID(1);
         newGame.setAnswer("1234");
-        service.addGame(newGame);
-        
+        newGame = service.addGame(newGame);
+
         //retrive game
         newGame = service.getGameById(newGame.getGameID(), false);
-        
+
         //call update method
         BullCowGameObject updatedGame = service.updateGame(newGame);
-        
+
         //verify that the status of the updated game and game pulled from the DAO are not equal
         assertNotEquals(newGame.getStatus(), updatedGame.getStatus());
     }
@@ -145,19 +165,17 @@ public class BullCowServiceTest {
         BullCowGameObject game1 = new BullCowGameObject();
         game1.setAnswer("1234");
         service.addGame(game1);
-        
+
         //add second game
         BullCowGameObject game2 = new BullCowGameObject();
-        game1.setAnswer("4321");
+        game2.setAnswer("4321");
         service.addGame(game2);
-        
+
         //call getall method
         List<BullCowGameObject> games = service.getAllGames();
-        
-        //assertions
+
+        //assertion
         assertEquals(2, games.size());
-        assertTrue(games.contains(game1));
-        assertTrue(games.contains(game2));
     }
 
     @Test
@@ -191,6 +209,18 @@ public class BullCowServiceTest {
         String testGuess4 = "5512";
         String testResults4 = "e:0:p:2";
         assertEquals(testResults4, service.calculateResults(testAnswer, testGuess4));
+        
+        String testGuess5 = "4444";
+        String testResults5 = "e:1:p:3";
+        assertEquals(testResults5, service.calculateResults(testAnswer, testGuess5));
+        
+        String testGuess6 = "4445";
+        String testResults6 = "e:0:p:3";
+        assertEquals(testResults6, service.calculateResults(testAnswer, testGuess6));
+        
+        String testGuess7 = "4441";
+        String testResults7 = "e:0:p:4";
+        assertEquals(testResults7, service.calculateResults(testAnswer, testGuess7));
     }
 
 
@@ -198,9 +228,8 @@ public class BullCowServiceTest {
     public void testVerifyGameID() {
         //make and add a new game
         BullCowGameObject newGame = new BullCowGameObject();
-        newGame.setGameID(1);
         newGame.setAnswer("1234");
-        service.addGame(newGame);
+        newGame = service.addGame(newGame);
         
         //retrive that game and verify that its gameID is 1
         BullCowGameObject fromDao = service.getGameById(newGame.getGameID(), false);

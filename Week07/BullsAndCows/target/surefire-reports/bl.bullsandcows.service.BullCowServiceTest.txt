@@ -1,28 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: bl.bullsandcows.service.BullCowServiceTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 1, Errors: 4, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in bl.bullsandcows.service.BullCowServiceTest
-testAddGameANDGetGameByID  Time elapsed: 0 s  <<< FAILURE!
-junit.framework.AssertionFailedError: expected:<bl.bullsandcows.models.BullCowGameObject@8ffe768> but was:<null>
-	at bl.bullsandcows.service.BullCowServiceTest.testAddGameANDGetGameByID(BullCowServiceTest.java:80)
-
-testGetAllGames  Time elapsed: 0 s  <<< ERROR!
-org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT INTO games (answer) VALUES (?);]; Column 'Answer' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'Answer' cannot be null
-	at bl.bullsandcows.service.BullCowServiceTest.testGetAllGames(BullCowServiceTest.java:152)
-Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'Answer' cannot be null
-	at bl.bullsandcows.service.BullCowServiceTest.testGetAllGames(BullCowServiceTest.java:152)
-
-testUpdateGame  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at bl.bullsandcows.service.BullCowServiceTest.testUpdateGame(BullCowServiceTest.java:136)
-
-testVerifyGameID  Time elapsed: 0 s  <<< ERROR!
-java.lang.NullPointerException
-	at bl.bullsandcows.service.BullCowServiceTest.testVerifyGameID(BullCowServiceTest.java:207)
-
-testAddRoundANDGetAllRoundsByGameID  Time elapsed: 0 s  <<< ERROR!
-org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT INTO allRounds (TimeOfGuess, RoundResults, Guess, GameID) VALUES (?, ?, ?, ?);]; Cannot add or update a child row: a foreign key constraint fails (`bullsandcowstestdb`.`allrounds`, CONSTRAINT `allrounds_ibfk_1` FOREIGN KEY (`GameID`) REFERENCES `games` (`GameID`)); nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`bullsandcowstestdb`.`allrounds`, CONSTRAINT `allrounds_ibfk_1` FOREIGN KEY (`GameID`) REFERENCES `games` (`GameID`))
-	at bl.bullsandcows.service.BullCowServiceTest.testAddRoundANDGetAllRoundsByGameID(BullCowServiceTest.java:91)
-Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`bullsandcowstestdb`.`allrounds`, CONSTRAINT `allrounds_ibfk_1` FOREIGN KEY (`GameID`) REFERENCES `games` (`GameID`))
-	at bl.bullsandcows.service.BullCowServiceTest.testAddRoundANDGetAllRoundsByGameID(BullCowServiceTest.java:91)
-
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.334 s - in bl.bullsandcows.service.BullCowServiceTest

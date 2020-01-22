@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+Name: home.html, (DVD Project)
+Author: Leboutillier
+Date Created: 22 JAN 2020
+Date Modified:
+-->
+<html lang="en">
+<head>
+	<!-- Meta for Bootstrap 4 -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Title for document -->
+	<title>Home | DVD Library</title>
+	
+	<!-- External links -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	<!-- Additional CSS -->
+
+	<!-- Styles for this page -->
+	<style>
+	.hidden {
+		display: none;
+	}
+	
+	</style>
+</head>
+	
+<body>
+	<div class="container" style="max-width: 900px; margin: auto; padding-top:20px;">
+		
+		<div id="pageTopHome" class="row">
+			<div class="col-md-3">
+				<button id="createBtn" type="button">Create DVD</button>
+			</div>
+			<div class="col-md-9" style="float: right;">
+				<form id="searchForm" class="form-horizontal">
+					<button id="searchBtn" type="button">Search</button>
+					<select id="searchDropdown">
+						<!-- dynamically add choices -->
+					</select> 
+					<input id="searchText" type="text" placeholder="Search Term" ></input>			
+				</form>
+			</div>
+		</div>
+		
+		<div id="pageTopCreateANDEdit" class="hidden">
+			<!-- Dynamically place header -->
+		</div>
+		
+		<hr/>
+		
+		<ul class="list-group" id="errorMessages"></ul> <!-- List for error messages -->
+		
+		<div id="pageBottomList">
+			<table id="listAllTable" class="table table-hover">
+                <tr>
+                    <th width="25%">Title</th>
+                    <th width="25%">Release Date</th>
+                    <th width="15%">Director</th>
+                    <th width="15%">Rating</th>
+					<th width="20%"></th>
+                </tr>
+				<tbody id="contentRows">
+					<!--Will be dynamically added to --> 
+				</tbody>               
+            </table>
+		</div>
+		<div id="pageBottomCreateAndEdit" class="hidden">
+			<form class="form-horizontal" role="form" id="edit-form" style="max-width: 750px; margin: auto;">
+                <div class="form-group">
+                    <label for="inputCreateTitle" class="col-md-4 control-label">
+						DVD Title:
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text"
+                            class="form-control"
+                            id="inputCreateTitle"
+                            placeholder="Enter Title" required/>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label for="inputCreateYear" class="col-md-4 control-label">
+						Release Year:
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text"
+                            class="form-control"
+                            id="inputCreateYear"
+                            placeholder="Enter Release Year" required/>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label for="inputCreateDirector" class="col-md-4 control-label">
+						Director:
+                    </label>
+                    <div class="col-md-8">
+                        <input type="text"
+                            class="form-control"
+                            id="inputCreateDirector"
+                            placeholder="Enter Director"/>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label for="inputCreateRating" class="col-md-4 control-label">
+						DVD Title
+                    </label>
+                    <div class="col-md-8">
+						<select id="inputCreateRating" class="form-control" style="max-width: 50%">
+							<option value="Default">Choose Rating:</option>
+						</select> 
+					</div>
+                </div>
+				<div class="form-group">
+                    <label for="inputCreateNotes" class="col-md-4 control-label">
+						Notes:
+                    </label>
+                    <div class="col-md-8">
+						<textarea id="inputCreateNotes" class="form-control" placeholder="Enter Note"></textarea> 
+					</div>
+                </div>
+				
+				
+				<div class="form-group">
+					<button type="button"
+                        id="createCancelButton"
+                        class="btn btn-default">
+                        Cancel
+                    </button>
+					<button type="button"
+                        id="createDVDButton"
+                        class="btn btn-default">
+                        Create DVD
+                    </button>
+				</div>
+            </form>
+		</div>
+	
+	</div>
+	
+	<!-- My JS File -->
+	<script src="js/home.js"></script>
+	
+	<!-- Full JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

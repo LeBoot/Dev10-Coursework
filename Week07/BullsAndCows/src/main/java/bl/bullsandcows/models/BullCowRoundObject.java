@@ -62,12 +62,12 @@ public class BullCowRoundObject {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + this.roundID;
-        hash = 59 * hash + Objects.hashCode(this.timeOfGuess);
-        hash = 59 * hash + Objects.hashCode(this.roundResults);
-        hash = 59 * hash + Objects.hashCode(this.guess);
-        hash = 59 * hash + this.gameID;
+        int hash = 3;
+        hash = 53 * hash + this.roundID;
+        hash = 53 * hash + Objects.hashCode(this.timeOfGuess);
+        hash = 53 * hash + Objects.hashCode(this.roundResults);
+        hash = 53 * hash + Objects.hashCode(this.guess);
+        hash = 53 * hash + this.gameID;
         return hash;
     }
 
@@ -100,6 +100,8 @@ public class BullCowRoundObject {
         }
         return true;
     }
+
+    
     
     
     
