@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+Name: home.html, (Vending Machine Summative)
+Author: Leboutillier
+Date Created: 22 JAN 2020
+Date Modified:
+-->
+<html lang="en">
+<head>
+	<!-- Meta for Bootstrap 4 -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Title for document -->
+	<title>Vending Machine</title>
+	
+	<!-- External links -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	<!-- Additional CSS -->
+	<link href="css/home.css" rel="stylesheet" type="text/css" />
+
+	<!-- Styles for this page -->
+	<style>
+
+	</style>
+</head>
+	
+<body>
+	<div id="bodyDiv" class="container">
+		<div id="header">
+			<h1>Vending Machine</h1>
+			<hr/>
+		</div>
+		
+		<div>
+			<div id="leftTwoThirds" class="col-sm-8">
+				<div id="flexBoxForItems" class="flex-container">
+					<!-- dynamically add items -->
+					<div class="flex-item">
+						<button type="button" class="vendingItem">
+							<p class="itemIndex">1</p>
+							<p>Snickers</p>
+							<p class="itemPriceTag">$1.85</p>
+							<p>Quantity Left: 4</p>	
+						</button>
+					</div>
+					<div class="flex-item">2</div>
+					<div class="flex-item">3</div>
+					<div class="flex-item">4</div>
+					<div class="flex-item">5</div>
+					<div class="flex-item">6</div>
+					<div class="flex-item">7</div>
+					<div class="flex-item">8</div>
+					<div class="flex-item">9</div>
+				</div>
+			</div> <!-- close for left two thirds -->
+			
+			<div id="rightOneThird" class="col-sm-4">
+				<div id="form1" class="form-container">
+					<h2>Total $ In</h2>
+					
+					<div id="form1output">
+						<p id="form1text">Total In Text</p>
+						<div id="form1flexBox" class="flex-container">
+							<button id="addDollar" type="button" class="form1button">Add Dollar</button>
+							<button id="addQuarter" type="button" class="form1button">Add Quarter</button>
+							<button id="addDime" type="button" class="form1button">Add Dime</button>
+							<button id="addNickel" type="button" class="form1button">Add Nickel</button>
+						</div>
+					</div>
+					
+					<hr/>
+				<div> <!-- close for form 1 -->
+				
+				<div id="form2" class="form-container">
+					<h2>Messages</h2>
+					
+					<div id="form2output">
+						<p id="form2text">Message(s)</p>
+						<div id="form2item" class="row">
+							<div class="col-lg-4">
+								<p id="form2itemLabel">Item:</p>
+							</div>
+							<div class="col-lg-8">
+								<p id="form2itemDisplay">Snickers</p>
+							</div>
+						</div>
+						<div id="form2buttonDiv">
+							<button id="makePurchaseButton" type="button">Make Purchase</button>
+						</div>
+					</div>
+					
+					<hr/>
+				<div> <!-- close for form 2 -->
+				
+				<div id="form3" class="form-container">
+					<h2>Change</h2>
+					
+					<div id="form3output">
+						<p id="form3text">10 Quarters, 10 Dimes, 10 Nickels, 10 Dollars</p>
+						<div id="form3ButtonDiv">
+							<button id="changeReturnButton" type="button" class="form3button">Change Return</button>
+						</div>
+					</div>
+				</div> <!-- close for form 3 -->
+			
+			
+			</div> <!-- close for right one third -->
+		
+		</div> <!-- close for div for everything but header, hr -->
+	
+	</div> <!-- close for largest div in <body> -->
+	
+	
+	<!-- Custom jQuery -->
+	<script src="js/home.js"</script>
+	
+	<!-- Full JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

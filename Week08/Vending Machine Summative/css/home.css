@@ -1,0 +1,149 @@
+#bodyDiv {
+		max-width: 95%;
+		padding-top: 25px;
+		margin: auto;
+	}
+	
+	#header {
+		text-align: center;
+	}
+	
+	hr {
+		max-width: 90%;
+		border: 1px solid;
+	}
+	
+	h2 {
+		text-align: center;
+	}
+	
+	.form-container {
+		max-width: 100%;
+	}
+	
+	#flexBoxForItems {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+	
+	.flex-item {
+		flex-grow: 1;
+		height: 180px;
+		width: 180px;
+		max-width: 180px;
+		margin: 25px 10px;
+		color: black;
+		font-size: 14px;
+		text-align: center;
+		border: solid black 3px;
+		border: solid black 3px;
+	}
+	
+	
+	#form1flexBox {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		margin-top: 10px;
+		
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+	
+	.form1button,
+	.form3button {
+		flex-grow: 1;
+		border: solid black 2px;
+		padding: 5px;
+		height: 40px;
+		width: 150px;
+		max-width: 150px;
+		margin: 10px 10px;
+		color: black;
+		background-color: lightgrey;
+		font-size: 14px;
+		text-align: center;
+	}
+	
+	.vendingItem {
+		border: none;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.itemIndex {
+		text-align: left;
+	}
+	
+	#form1text {
+		border: solid black 2px;
+		padding: 5px;
+		margin: auto;
+		max-width: 35%;
+		min-height: 40px;
+		text-align: center;
+
+	}
+	
+	#form2text,
+	#form3text {
+		border: solid black 2px;
+		padding: 5px;
+		margin: auto;
+		max-width: 75%;
+		min-height: 40px;
+		text-align: center;
+	}
+
+	#form2item {
+		margin: 10px 15px 10px 15px;
+		padding: 11px 20px 0px 20px;
+		font-size: 20px;
+	}
+	
+	#form2itemLabel {
+		padding: 5px 0px;
+		
+	}
+	
+	#form2itemDisplay {
+		border: solid black 2px;
+		padding: 5px;
+		margin: auto;
+		max-width: 100%;
+		min-height: 40px;
+		text-align: center;
+		font-size-adjust;
+	}
+	
+	#form2buttonDiv,
+	#form3ButtonDiv	{
+		text-align: center;
+	}
+	
+	#makePurchaseButton {
+		border: solid black 2px;
+		padding: 5px;
+		height: 55px;
+		width: 220px;
+		max-width: 220px;
+		margin: auto;
+		color: black;
+		background-color: lightgrey;
+		font-size: 20px;
+		text-align: center;
+	}
+	
+	#itemPriceTag {
+		margin-bottom: 20px;
+	}

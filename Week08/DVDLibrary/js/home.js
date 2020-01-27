@@ -22,7 +22,7 @@ $(document).ready(function () {
 })
 
 function cancelCreate() {
-	//clear form	
+	//clear form
 	clearCreateForm();
 		
 	//return appearence to when page first loads
@@ -145,7 +145,6 @@ function configureDropDown() {
 	$("#searchDropdown").append(defaultOption);
 	
 	//place selections
-	
 	var dropdownSelections = '<option value="title">Title</option>';
 		dropdownSelections += '<option value="releaseDate">Release Date</option>';
 		dropdownSelections += '<option value="director">Director</option>';
@@ -161,6 +160,8 @@ function viewCreateDVD() {
 	$("#pageTopCreateANDEdit").html(
 		"<h1>Create DVD</h1>"
 	);
+	
+	$("#inputCreateRating").
 	$("#pageTopCreateANDEdit").removeClass("hidden");
 	$("#pageTopCreateANDEdit").show();
 	
