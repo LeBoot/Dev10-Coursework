@@ -278,13 +278,14 @@ function loadAllItems() {
 				var myId = item.id;
 				var myName = item.name;
 				var price = item.price;
+				var priceToDisplay = parseFloat(price).toFixed(2)
 				var quantity = item.quantity;
 
 				var itemElement = "<div class='flex-item'>";
 					itemElement += "<button onclick='getItem(\"" + myName + "\", " + myId + ", " + price + ", " + indexToDisplay + ")' type='button' class='vendingItem'>";
 					itemElement += "<p class='itemIndex'>" + indexToDisplay + "</p>";
 					itemElement += "<p class='itemName'>" + myName + "</p>";
-					itemElement += "<p class='itemPriceTag'>$" + price + "</p>";
+					itemElement += "<p class='itemPriceTag'>$" + priceToDisplay + "</p>";
 					itemElement += "<p>Quantity Left: " + quantity + "</p>";
 					itemElement += "<p class='itemID'>Item ID: " + myId + "</p>";
 					itemElement += "</button>";
