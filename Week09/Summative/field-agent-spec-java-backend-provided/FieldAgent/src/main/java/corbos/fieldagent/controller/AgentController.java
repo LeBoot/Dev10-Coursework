@@ -422,33 +422,3 @@ public class AgentController {
     }
    
 }
-
-
-//@PostMapping("/add-field-agent")
-//    public String addAgent(Agent agent, HttpServletRequest request, Model model) {
-//        String agencyId = request.getParameter("agencyId");
-//        String securityClearanceId = request.getParameter("securityClearanceId");
-//        String agentBirthDate = request.getParameter("agentBirthDate");
-//        String agentActivationDate = request.getParameter("agentActivationDate");
-//
-//        Boolean isActiveCheckbox;
-//
-//        if (request.getParameter("isActiveCheckbox") != null) {
-//            isActiveCheckbox = true;
-//        } else {
-//            isActiveCheckbox = false;
-//        }
-//
-//        LocalDate agentBirthDateConverted = LocalDate.parse(agentBirthDate, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-//        LocalDate agentActivationDateConverted = LocalDate.parse(agentActivationDate, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-//
-//        agent.setAgency(lookupService.findAgencyById(Integer.parseInt(agencyId)));
-//        agent.setSecurityClearance(lookupService.findSecurityClearanceById(Integer.parseInt(securityClearanceId)));
-//        agent.setBirthDate(agentBirthDateConverted);
-//        agent.setActivationDate(agentActivationDateConverted);
-//        agent.setActive(isActiveCheckbox);
-//
-//        fieldAgentService.save(agent);
-//
-//        return "redirect:/home";
-//    }
