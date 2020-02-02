@@ -5,11 +5,7 @@
  */
 package corbos.fieldagent.controller;
 
-import corbos.fieldagent.data.AgencyRepository;
-import corbos.fieldagent.data.AgentRepository;
-import corbos.fieldagent.data.AssignmentRepository;
-import corbos.fieldagent.data.CountryRepository;
-import corbos.fieldagent.data.SecurityClearanceRepository;
+import corbos.fieldagent.service.AgentServiceLayer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,29 +19,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomePageController {
     
     @Autowired
-    AgencyRepository agencyRepo;
-    
+    AgentServiceLayer agentService;
+
     @Autowired
-    AgentRepository agentRepo;
+    AgentController ac;
     
-    @Autowired
-    AssignmentRepository assignmentRepo;
-    
-    @Autowired
-    CountryRepository countryRepo;
-    
-    @Autowired
-    SecurityClearanceRepository clearanceRepo;
-    
+    //load the home page with all agents listed in a table
     @GetMapping({"/", "/home"})
     public String homePage(Model model) {
-        model.addAttribute("agents", agentRepo.findAll());
+        ac.clearViolations();
+        model.addAttribute("agents", agentService.findAllAgents());
         return "home";
     }
-    
-    @GetMapping("redirectAddAgent")
-    public String redirectAddAgent(Model model) {
-        return "addAgent";
-    }
-    
+
 }

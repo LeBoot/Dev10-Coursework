@@ -10,49 +10,36 @@
 
         <title>Field Agent: Home</title>
         <style>
-            table {
-                max-width: 90%;
-                margin: 20px auto;
-            }
             body {
                 margin: 20px;
             }
-            .row {
-                width: 90%;
+            #mainDiv {
+                max-width: 600px;
                 margin: auto;
+                border: solid black 1px;
+                padding: 20px;
             }
-            .btn-primary,
-            .btn-danger {
-                float: right;
-            }
-            .btn-secondary {
-                float: left;
-            }
+
         </style>
     </head>
     <body>
-        <div class="row">
-            <div class="col-sm-6">
-                <h1>Home</h1>
+        <div id="mainDiv">
+            <h2>Delete AgentName</h2>
+            <div>
+                Assignments: 9
             </div>
-            <div class="col-sm-6" >
-                <a href="addAgent" class="btn btn-primary">Add An Agent</a>
+            <div>
+                Deletions are permanent.
             </div>
+            <div>
+                Both Fuliva and her 9 assignments will be deleted forever.
+            </div>
+            <p>
+                Continue?
+            </p>
+            <a class="btn btn-danger" style="color: white;">Delete</a>
+            <a class="btn btn-secondary" style="color: white;" href="/home">Cancel</a>
         </div>
-        <table class="table table-striped">
-                <tr>
-                    <th>Field Agent</th>
-                    <th>Agency</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <tr th:each="agent : ${agents}">
-                    <td><a href="#" th:href="@{/fieldAgent(identifier=${agent.identifier})}"><span th:text="${agent.firstName + ' ' + agent.lastName}"></span></a></td>
-                    <td th:text="${agent.agency.name}">agency</td>
-                    <td><a class="btn btn-danger" href="#" th:href="@{/viewDeleteAgent(identifier=${agent.identifier})}">Delete</a></td>
-                    <td><a class="btn btn-secondary" href="#" th:href="@{/addAssignment}">Add an Assignment</a></td>
-                </tr>
-        </table>
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
