@@ -17,23 +17,27 @@ import org.springframework.stereotype.Service;
  * @author Boone
  */
 @Service
-public class AgentServiceLayer {
+public class AgentServiceLayer implements AgentServiceInterface{
     
     @Autowired
     AgentRepository agentRepo;
     
+    @Override
     public List<Agent> findAllAgents() {
         return agentRepo.findAll();
     }
     
+    @Override
     public Optional<Agent> findById(String identifier) {
         return agentRepo.findById(identifier);
     }
     
+    @Override
     public void save(Agent agent) {
         agentRepo.save(agent);
     }
     
+    @Override
     public void deleteAgent(String identifier) {
         agentRepo.deleteById(identifier);
     }

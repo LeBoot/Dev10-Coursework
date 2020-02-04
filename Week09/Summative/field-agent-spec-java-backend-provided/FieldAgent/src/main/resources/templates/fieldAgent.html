@@ -71,7 +71,8 @@
                             <select class="form-control" name="agencyName" id="agencyName" required>
                                 <option th:each="agency : ${listOfAgencies}" 
                                         th:value="${agency.agencyId}" 
-                                        th:text="${agency.name}">Agency Name</option>
+                                        th:text="${agency.name}"
+                                        th:selected="${agency.agencyId == agentAgencyId}">Agency Name</option>
                             </select>
                         </div>
                         <div class="form-group col">
@@ -79,7 +80,8 @@
                             <select class="form-control" name="securityClearance" id="securityClearance" required>
                                 <option th:each="clearance : ${listOfClearances}"
                                         th:value="${clearance.securityClearanceId}"
-                                        th:text="${clearance.name}">Security Clearance</option>
+                                        th:text="${clearance.name}"
+                                        th:selected="${clearance.securityClearanceId == agentSecurityClearanceId}">Security Clearance</option>
                             </select>
                         </div>
                     </div>
@@ -120,7 +122,7 @@
                     <h3>Assignments</h3>
                 </div>
                 <div class="col right">
-                    <a class="btn btn-primary" style="float: right; color: white;" href="/addAssignment">Add An Assignment</a>
+                    <a class="btn btn-primary" style="float: right; color: white;" href="#" th:href="@{/addAssignment(identifier=${agentIdentifier})}">Add An Assignment</a>
                 </div>
             </div>
             <table class="table table-striped">
@@ -139,7 +141,7 @@
                         <td th:text="${assignment.projectedEndDate}"></td>
                         <td>
                             <a style="color: white;" class="btn btn-danger"  href="#" th:href="@{/deleteAssignment(assignmentId=${assignment.assignmentId}, agentId=${agentIdentifier})}">Delete</a>
-                            <a style="color: white;" class="btn btn-secondary">View/Edit</a>
+                            <a style="color: white;" class="btn btn-secondary" href="#" th:href="@{/viewAssignment(assignmentId=${assignment.assignmentId}, agentId=${agentIdentifier})}">View/Edit</a>
                         </td>
                     </tr>
                 </tbody>

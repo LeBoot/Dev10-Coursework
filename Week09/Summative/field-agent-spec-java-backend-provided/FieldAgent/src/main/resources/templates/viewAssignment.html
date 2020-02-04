@@ -8,7 +8,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-        <title>Field Agent: Add Assignment</title>
+        <title>Field Agent: View Assignment</title>
         <style>
             body {
                 margin: 20px auto;
@@ -25,7 +25,12 @@
                 th:text="${violation}">Error message</p>
         </div>
         
-        <form action="/addAssignment" method="POST">
+        <form action="/editAssignment" method="POST">
+            <div style="display:none;">
+                <input th:value="${assignmentId}" name="assignmentId" id="assignmentId"></input>
+                <input th:value="${originalStartDate}" type="text" name="originalStartDate" id="originalStartDate"></input>
+                <input th:value="${originalEndDate}" type="text" name="originalEndDate" id="originalEndDate"></input>
+            </div>
                 <div class="form-row">
                     <div class="form-group col">
                         <label>Field Agent</label>
@@ -33,16 +38,17 @@
                             <option th:each="agent : ${listOfAgents}"
                                     th:value="${agent.identifier}"
                                     th:text="${agent.firstName} + ' ' + ${agent.lastName}"
-                                    th:selected="${agent.identifier == thisAgentId}">
+                                    th:selected="${agent.identifier == assignmentAgentIdentifier}">
                             </option>
                         </select>
-                    </div>  
+                    </div>
                     <div class="form-group col">
                         <label>Country</label>
                         <select class="form-control" name="country" id="country" required>
                             <option th:each="country : ${listOfCountries}"
                                     th:value="${country.countryCode}"
-                                    th:text="${country.name}">
+                                    th:text="${country.name}"
+                                    th:selected="${country.countryCode == assignmentCountryCode}">
                             </option>
                         </select>
                     </div>
@@ -50,21 +56,37 @@
                 <div class="form-row">
                     <div class="form-group col">
                         <label>Start</label>
-                        <input class="form-control" type="date" name="startDate" id="startDate" required/>
+                        <input class="form-control" type="date" name="startDate" id="startDate" th:value="${assignmentStart}" required/>
                     </div>
                     <div class="form-group col">
                         <label>Projected End</label>
-                        <input class="form-control" type="date" name="projectedEndDate" id="projectedEndDate" required/>
+                        <input class="form-control" type="date" name="projectedEndDate" id="projectedEndDate" th:value="${assignmentProjectedEnd}" required/>
                     </div>
                     <div class="form-group col">
                         <label>Actual End</label>
-                        <input class="form-control" type="date" name="actualEndDate" id="actualEndDate"/>
+                        <!-- IF DATE EXISTS-->
+                        <div th:if="${isActualEndDate == true}">
+                            <input th:value="${assignmentAcutalDate}" class="form-control" type="date" name="actualEndDate" id="actualEndDate"/>
+                            <input style="display:none;" th:value="${assignmentAcutalDate}" type="text" name="originalActualEndDate" id="originalActualEndDate"/>
+                        </div>
+                        <!-- IF DATE DOES NOT EXIST -->
+                        <div th:if="${isActualEndDate == false}">
+                            <input class="form-control" type="date" name="actualEndDate" id="actualEndDate"/>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Notes</label>
-                    <textarea class="form-control" type="text" name="assignmentNotes" id="assignmentNotes" maxlength="9999">
-                    </textarea>
+                    <!-- IF NOTES EXIST -->
+                    <div th:if="${doNotesExist == true}">
+                        <textarea th:value="notes" class="form-control" type="text" name="assignmentNotes" id="assignmentNotes" maxlength="9999">
+                        </textarea>
+                    </div>
+                    <!-- IF NOTES DO NOT EXIST -->
+                    <div th:if="${doNotesExist == false}">
+                        <textarea class="form-control" type="text" name="assignmentNotes" id="assignmentNotes" maxlength="9999">
+                        </textarea>
+                    </div>
                 </div>
                 <button class="btn btn-primary">Save</button>
                 <a class="btn btn-secondary" style="color: white;" href="/home">Cancel</a>
@@ -77,6 +99,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     </body>
 </html>
+
 
 
 

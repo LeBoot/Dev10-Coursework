@@ -50,7 +50,7 @@
                     <td><a href="#" th:href="@{/fieldAgent(identifier=${agent.identifier})}"><span th:text="${agent.firstName + ' ' + agent.lastName}"></span></a></td>
                     <td th:text="${agent.agency.name}">agency</td>
                     <td><a class="btn btn-danger" href="#" th:href="@{/viewDeleteAgent(identifier=${agent.identifier})}">Delete</a></td>
-                    <td><a class="btn btn-secondary" href="#" th:href="@{/addAssignment}">Add an Assignment</a></td>
+                    <td><a class="btn btn-secondary" href="#" th:href="@{/addAssignment(identifier=${agent.identifier})}">Add an Assignment</a></td>
                 </tr>
         </table>
 

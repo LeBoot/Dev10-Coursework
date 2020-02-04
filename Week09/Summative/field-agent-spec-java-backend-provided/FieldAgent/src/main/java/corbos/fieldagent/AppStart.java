@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AppStart {
 
     public static void main(String[] args) {
-        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+        //TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
         SpringApplication.run(AppStart.class, args);
     }
 }
