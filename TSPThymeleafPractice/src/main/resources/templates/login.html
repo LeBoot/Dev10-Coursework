@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Login Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .violationsMessage {
+                color: red;
+                background-color: pink;
+                border: solid red 2px;
+                border-radius: 4px;
+                padding: 8px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div>This is the Login Page</div>
+        <hr />
+        <div>
+            <p class="violationsMessage" 
+                th:each="violation : ${listOfViolations}" 
+                th:text="${violation}"></p>
+        </div>
+        <hr />
+        <form action="cont-session/login-request" method="POST">
+            <input placeholder="username" name="usernameInput" th:value="${displayUsername}"/>
+            <input placeholder="password" name="passwordInput"/>
+            <select name="dropdown" >
+                <option th:each="option : ${nameOfDropdownBox}" 
+                        th:value="${option}" 
+                        th:text="${option}"
+                        th:selected="${option} == ${'Best Option'}">
+                </option>
+            </select>
+            <button>Log In</button>
+        </form>
+        <a href="/home">Home</a>
+
+    </body>
+</html>
