@@ -278,14 +278,16 @@ public class AgentController {
 
         String startDate = request.getParameter("startDate");
         LocalDate startDateConverted = LocalDate.parse(startDate, formatFromHtml);
-        LocalDate refactoredStartDateConverted = startDateConverted.plusDays(1);
-        assignment.setStartDate(refactoredStartDateConverted);
+//        LocalDate refactoredStartDateConverted = startDateConverted.minusDays(2);
+//        assignment.setStartDate(refactoredStartDateConverted);
+        assignment.setStartDate(startDateConverted);
 
         String projectedEnd = request.getParameter("projectedEndDate");
         LocalDate projectedEndConverted = LocalDate.parse(projectedEnd, formatFromHtml);
-        LocalDate refactoredprojectedEndConverted = projectedEndConverted.plusDays(1);
-        assignment.setProjectedEndDate(refactoredprojectedEndConverted);
-
+//        LocalDate refactoredprojectedEndConverted = projectedEndConverted.plusDays(1);
+//        assignment.setProjectedEndDate(refactoredprojectedEndConverted);
+        assignment.setProjectedEndDate(projectedEndConverted);
+        
         String actualEnd = request.getParameter("actualEndDate");
         if (actualEnd.length() > 1) {
             LocalDate actualEndConverted = LocalDate.parse(actualEnd, formatFromHtml);

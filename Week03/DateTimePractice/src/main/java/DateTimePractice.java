@@ -21,7 +21,11 @@ import java.util.GregorianCalendar;
  */
 public class DateTimePractice {
     public static void main(String[] args) {
-        //get today's date
+        for (int i = 1; i <= 100; i++) {
+            System.out.print("hundo ");
+        }
+
+//get today's date
         LocalDate ld = LocalDate.now();
         System.out.println(ld);  
         
