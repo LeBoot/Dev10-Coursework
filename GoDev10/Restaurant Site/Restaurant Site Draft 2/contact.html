@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+Name: Contact Us (for restaurant site 2)
+Date Created: 23 OCT 2019
+Most Revised: 23 OCT 2019
+-->
+<html lang="en">
+	
+	<head>
+		<meta charset="uft-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Contact Us</title>		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link href="restaurantStyles.css" rel="stylesheet" type="text/css" />
+		<style>
+			body {
+				background-color: rgb(216, 239, 243); <!--#d8eff3, powderblue-90%-->
+			}
+			
+			#div1 {
+				background-color: wheat;
+				width: 90%;
+				margin: auto;
+				margin-bottom: 50px;
+				margin-top: 50px;
+				padding-top: 30px;
+				padding-bottom: 30px;
+			}
+			
+			#fields {
+				text-align: center;
+				font-weight: bold;
+			}
+			
+			.aaa {
+				font-weight: bold;
+			}
+
+			#div8 {
+				text-align: center;
+			}
+			
+			input[type=text] input[type=numbers] {
+				padding: 10px 10px;
+				margin: 18px 0;
+				outline: none;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<header>
+			<h1>Boudreaux's Fine Dining</h1>
+		</header>
+		
+		<nav>
+			<a class="btn" href="index.html">Home</a>
+			<a class="btn" href="menu.html">Menu</a>
+			<a class="btn" href="contact.html">Contact Us</a>
+		</nav>
+		
+		<div id="div1"> <!-- entire form goes in this div -->
+			<p id="fields">Bold fields are required.</p>
+			
+			<form action="submit.html" method="POST" id="form1">
+			
+			<div id="div2" class="row">
+				<div id="div2A" class="col-lg-6" style="float:right"> <!-- first question -->
+					<label class="aaa" for="Name" style="float:right">Name:</label>
+				</div>
+				<div id="div2B" class="col-lg-6" style="float:left"> <!-- first question response -->
+					<input type="text" id="Name" name="Name" style="float:left" />
+				</div>
+			</div>
+			<div id="div3" class="row">
+				<div id="div3A" class="col-lg-6" style="float:right"> <!-- second question -->
+					<label class="aaa" for="Email" style="float:right">Email:</label>
+				</div>
+				<div id="div3B" class="col-lg-6" style="float:left"> <!-- second question response -->
+					<input type="text" id="Email" name="Email" style="float:left" />
+				</div>
+			</div>
+			<div id="div4" class="row">
+				<div id="div4A" class="col-lg-6" style="float:right"> <!-- third question -->
+					<label class="aaa" for="Phone" style="float:right;">Phone:</label>
+				</div>
+				<div id="div4B" class="col-lg-6" style="float:left"> <!-- third question response -->
+					<input type="numbers" id="Phone" name="Phone" style="float:left;" />
+				</div>
+			</div>
+			<div id="div5" class="row">
+				<div id="div5A" class="col-lg-6" style="float:right"> <!-- fourth question -->
+					<label for="Reason" style="float:right;">Reason for Inquiry:</label>
+				</div>
+				<div id="div5B" class="col-lg-6" style="float:left"> <!-- fourth question response -->
+					<select>
+						<option value="Catering" selected>Catering</option>
+						<option value="Party">Private Party</option>
+						<option value="Feedback">Feedback</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</div>
+			<div id="div6" class="row">
+				<div id="div6A" class="col-lg-6" style="float:right"> <!-- fifth question -->
+					<label for="Been_Before" style="float:right">Have you been to the restaurant?</label>
+				</div>
+				<div id="div6B" class="col-lg-6" style="float:left"> <!-- fifth question response -->
+					<input type="radio" id="Choice1" name="Been_Before" value="yes"/>
+						<label for="Choice1">Yes</label>
+					<input type="radio" id="Choice2" name="Been_Before" value="no"/>
+						<label for="Choice2">No</label>
+				</div>
+			</div>	
+			<div id="div7" class="row">
+				<div id="div7A" class="col-lg-6" style="float:right"> <!-- sixth question -->
+					<label for="Days" style="float:right">Best days to contact you:</label>
+				</div>
+				<div id="div7B" class="col-lg-6" style="float:left"> <!-- sixth question response -->
+					<input type="checkbox" id="Monday" name="contact_day" value="Monday" />
+						<label for="Monday">M</label>
+					<input type="checkbox" id="Tuesday" name="contact_day" value="Tuesday" />
+						<label for="Tuesday">T</label>
+					<input type="checkbox" id="Wednesday" name="contact_day" value="Wednesday" />
+						<label for="Wednesday">W</label>
+					<input type="checkbox" id="Thursday" name="contact_day" value="Thursday" />
+						<label for="Thursday">R</label>
+					<input type="checkbox" id="Friday" name="contact_day" value="Friday" />
+						<label for="Friday">F</label>
+				</div>
+			</div>
+			<div id="div8">
+				<input type="submit" name="submit" value="Send Request" />
+			</div>
+
+			</form>
+		</div>
+
+		<footer>
+			<p>1881 Palindrome Avenue; St. John, Nebraska 58785</p>
+			<p>1-646-555-2002</p>
+		</footer>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,46 @@
+/*
+Creator: LeBoutillier
+Date created: 23 OCT 2019
+Date last modified: 23 OCT 2019
+*/
+
+* {
+	font-family: "verdana", "arial", sans-serif;
+}
+
+header {
+	font-size: 2em;
+}
+
+header, footer { /*Header must be a hosted or embedded font*/
+	background-color: rgb(0, 179, 179); /*#00b3b3, teal-35%*/
+	color: rgb(77, 0, 38); /*#4d0026*/
+	text-align: center;
+	padding: 10px;
+}
+
+nav {
+	background-color: rgb(245, 222, 179); /*#F5DEB3, wheat*/
+	padding: 12px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+nav .btn {
+	background-color: rgb(0, 128, 128); /*#008080, teal-25%*/
+	color: rgb(245, 222, 179); /*#F5DEB3, wheat*/
+	margin-right: 12px;
+	border-radius: 2px;
+}
+
+nav .btn:visited {
+	color: rgb(216, 191, 216); /*#D8BFD8, thistle*/
+}
+
+nav .btn:hover {
+	font-weight: bold;
+}
+
+nav .btn:active {
+	text-decoration: none;
+}

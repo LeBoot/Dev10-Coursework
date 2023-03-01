@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+Name: Menu (for restaurant site 2)
+Date Created: 22 OCT 2019
+Date Modified: 23 OCT 2019
+-->
+<html lang="en">
+	
+	<head>
+		<meta charset="uft-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Menu</title>		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link href="restaurantStyles.css" rel="stylesheet" type="text/css" />
+		<style>
+			body {
+				background-color: rgb(216, 239, 243); <!--#d8eff3, powderblue-90%-->
+			}
+			
+			.menu {
+				text-align: center;
+				max-width: 80%;
+				margin: auto;
+			}
+			
+			.title {
+				text-decoration: underline;
+			}
+			
+			.name {
+				font-weight: bold;
+				font-size: 1.25em;
+			}
+			
+			.group {
+				margin-top: 20px;
+				margin-bottom: 40px
+			}
+		
+			th, td {
+				border-bottom: 1px solid grey
+			}
+			
+			#table1 {
+				border: 3px solid #4d0026;
+				width: 50%;
+				padding: 10px;
+				text-align: left;
+				margin: auto;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			
+			p {
+				margin: 0;
+			}
+
+		</style>
+	</head>
+	
+	<body>
+		<header>
+			<h1>Boudreaux's Fine Dining</h1>
+		</header>
+		
+		<nav>
+			<a class="btn" href="index.html">Home</a>
+			<a class="btn" href="menu.html">Menu</a>
+			<a class="btn" href="contact.html">Contact Us</a>
+		</nav>
+		
+		<div id="div0A" class="menu"> <!-- for food -->
+		
+			<div id="div1" class="title"> <!-- div for title "food" -->
+				<h2>Food</h2>
+			</div>
+			
+			<div id="div2" class="group"> <!-- div for 1st 3 menu items -->
+				<div id="div2A" class="row"> <!-- titles for first 3 foods -->
+					<div id="div2AA" style="float:left; width:33%;" class="name">
+						<p>Burger and Fries</p>
+					</div>
+					
+					<div id="div2AB" style="float:center; width:33%;" class="name">
+						<p>Hot Dog and Chips</p>
+					</div>
+
+					<div id="div2AC" style="float:right; width:33%;" class="name">
+						<p>Italian Sausage and Peppers</p>
+					</div>
+				</div>
+				<div id="div2B" class="row"> <!-- descriptions of first 3 foods -->
+					<div id="div2BA" style="float:left; width:33%;" class="description">
+						<p>An American Classic!</p>
+						<p>Your choice - with or without cheese</p>
+						<p>Pickle, onion, tomato, and lettuce</p>
+						<p>Served with our famous thick-cut</p>
+						<p>french fries</p>
+						<p>$7.95</p>
+					</div>
+					
+					<div id="div2BB" style="float:center; width:33%;" class="description">
+						<p>A Summer Classic!</p>
+						<p>Your choice - white or wheat bun</p>
+						<p>Relish, mustard, and ketchup</p>
+						<p>Served with our house-made chips</p>
+						<p>$7.95</p>
+					</div>
+
+					<div id="div2BC" style="float:right; width:33%;" class="description">
+						<p>An All-Time Favorite!</p>
+						<p>Your choice - mild or spicy Cole Slaw</p>
+						<p>Served with garlic mashers</p>
+						<p>$10.95</p>
+					</div>				
+				</div>
+			</div>
+			<div id="div3" class="group"> <!-- div for 2nd 3 menu items -->
+				<div id="div3A" class="row"> <!-- titles for second 3 foods -->
+					<div id="div3AA" style="float:left; width:33%;" class="name">
+						<p>Tenderloin Sandwich and Chips</p>
+					</div>
+					
+					<div id="div3AB" style="float:center; width:33%;" class="name">
+						<p>House Salad</p>
+					</div>
+
+					<div id="div3AC" style="float:right; width:33%;" class="name">
+						<p>Brisket Sandwich and Fries</p>
+					</div>
+				</div>
+				<div id="div3B" class="row"> <!-- descriptions of first 3 foods -->
+					<div id="div3BA" style="float:left; width:33%;" class="description">
+						<p>Really Hits the Spot!</p>
+						<p>Plain or Sesame Seed Bun</p>
+						<p>Pickle, onion, tomato, and lettuce</p>
+						<p>Served with our house-made chips</p>
+						<p>$8.95</p>
+					</div>
+					
+					<div id="div3BB" style="float:center; width:33%;" class="description">
+						<p>On the Lighter Side</p>
+						<p>Your choice - with or without cheese</p>
+						<p>Iceberg lettuce, tomatoes, peppers</p>
+						<p>Thousand Island or Ranch Dressing</p>
+						<p>Served with a dinner roll</p>
+						<p>$6.95</p>
+					</div>
+
+					<div id="div3BC" style="float:right; width:33%;" class="description">
+						<p>A Taste of Texas!</p>
+						<p>Smoked Brisket on thick-cut</p>
+						<p>Texas Toast</p>
+						<p>Cole Slaw</p>
+						<p>Served with our famous thick-cut</p>
+						<p>french fries</p>
+						<p>$7.95</p>
+					</div>					
+				</div>		
+			</div>
+		</div>
+		
+		
+		<div id="div0B" class="menu"> <!-- for beverages -->
+		
+			<div id="div4" class="title"> <!-- div for title "beverages" -->
+				<h2>Beverages</h2>
+			</div>
+			
+			<div id="div5">
+				<table id="table1">
+					<tr>
+						<td>Root Beer</td>
+						<td>$3.00</td>
+					</tr>
+					<tr>
+						<td>Bottled Water</td>
+						<td>$1.25</td>
+					</tr>
+					<tr>
+						<td>Lemonade</td>
+						<td>$1.00</td>
+					</tr>
+					<tr>
+						<td>Iced Tea</td>
+						<td>$1.25</td>
+					</tr>
+				</table>
+			</div>	
+		</div>
+			
+		<footer>
+			<p>1881 Palindrome Avenue; St. John, Nebraska 58785</p>
+			<p>1-646-555-2002</p>
+		</footer>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		
+	</body>
+
+</html>

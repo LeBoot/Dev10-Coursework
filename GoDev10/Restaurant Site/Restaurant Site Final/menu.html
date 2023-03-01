@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+Name: menu.html, (Restaurant Site 3)
+Author: Leboutillier
+Date Created: 25 OCT 2019
+Date Modified: 26 OCT 2019
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="restaurantStyles.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Menu</title>
+	<style>
+		body {
+			background-color: rgb(216, 239, 243); <!--#d8eff3, powderblue-90%-->
+		}
+		.title {
+			text-decoration: underline;
+			text-align: center;
+		}	
+		.foodname {
+			font-weight: bold;
+			font-size: 1.25em;
+		}	
+		.col-sm-4 {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+		#divFood p {
+			margin: 0;
+			text-align: center;
+		}
+		th, td {
+			padding-left: 3px;
+			border-bottom: 1px solid grey;
+		}	
+		#table1 {
+			border: 3px solid #4d0026;
+			width: 50%;
+			min-width: 200px;
+			padding: 10px;
+			text-align: left;
+			margin: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+	
+<body>
+	<header>
+		<noscript>
+			Note: This website works best when JavaScript is enabled!
+		</noscript>
+		<p>Boudreaux's Fine Dining</p>
+		<div id="bigNews">
+			<h1>Big News!</h1>
+			<h3>New Location Coming Soon!</h3>
+		</div>
+	</header>
+		
+	<nav>
+		<a class="btn" href="index.html" style="width:50px;"><i id="homeIcon" class="fa fa-home"></i></a>
+		<a class="btn" href="menu.html">Menu</a>
+		<a class="btn" href="contact.html">Contact Us</a>
+	</nav>
+
+	<div class="container">
+	<div id="caro" class="carousel slide" data-ride="carousel" data-interval="7000" data-pause="hover">
+		<div class="carousel-inner">
+			<div class="item active">
+				<h3>We're opening a new location!</h3>
+			</div>
+			<div class="item">
+				<h3>We're rolling out our seasonal menu, with special options for this season.</h3>
+			</div>
+			<div class="item">
+				<h3>The Drink of the Month is SG Special Brew.</h3>
+			</div>
+		</div>
+		<a class="left carousel-control" href="#caro" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#caro" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	</div>
+	
+	<div class="container" id="divFood">
+	  <h2 class="title">Food</h2>
+	  <div class="row">
+		<div class="col-sm-4">
+			<p class="foodname">Burger and Fries<p>
+			<p>An American Classic!</p>
+			<p>Your choice - with or without cheese</p>
+			<p>Pickle, onion, tomato, and lettuce</p>
+			<p>Served with our famous thick-cut</p>
+			<p>french fries</p>
+			<p>$7.95</p>
+		</div>
+		<div class="col-sm-4">
+			<p class="foodname">Hot Dog and Chips<p>
+			<p>A Summer Classic!</p>
+			<p>Your choice - white or wheat bun</p>
+			<p>Relish, mustard, and ketchup</p>
+			<p>Served with our house-made chips</p>
+			<p>$7.95</p>		
+		</div>	
+		<div class="col-sm-4">
+			<p class="foodname">Italian Sausage and Peppers<p>
+			<p>An All-Time Favorite!</p>
+			<p>Your choice - mild or spicy Cole Slaw</p>
+			<p>Served with garlic mashers</p>
+			<p>$10.95</p>		
+		</div>
+	  </div>
+	  <div class="row">
+		<div class="col-sm-4">
+			<p class="foodname">Tenderloin Sandwich and Chips<p>
+			<p>Really Hits the Spot!</p>
+			<p>Plain or Sesame Seed Bun</p>
+			<p>Pickle, onion, tomato, and lettuce</p>
+			<p>Served with our house-made chips</p>
+			<p>$8.95</p>
+		</div>	
+		<div class="col-sm-4">
+			<p class="foodname">House Salad<p>
+			<p>On the Lighter Side</p>
+			<p>Your choice - with or without cheese</p>
+			<p>Iceberg lettuce, tomatoes, peppers</p>
+			<p>Thousand Island or Ranch Dressing</p>
+			<p>Served with a dinner roll</p>
+			<p>$6.95</p>		
+		</div>	
+		<div class="col-sm-4">
+			<p class="foodname">Brisket Sandwich and Fries<p>
+			<p>A Taste of Texas!</p>
+			<p>Smoked Brisket on thick-cut</p>
+			<p>Texas Toast</p>
+			<p>Cole Slaw</p>
+			<p>Served with our famous thick-cut</p>
+			<p>french fries</p>
+			<p>$7.95</p>		
+		</div>
+	  </div>
+	</div>
+	
+	<div class="container" id="divBeverages">
+		<h2 class="title">Beverages</h2>
+		<div>
+		<table id="table1">
+			<tr>
+				<td>Root Beer</td>
+				<td>$3.00</td>
+			</tr>
+			<tr>
+				<td>Bottled Water</td>
+				<td>$1.25</td>
+			</tr>
+			<tr>
+				<td>Lemonade</td>
+				<td>$1.00</td>
+			</tr>
+			<tr>
+				<td>Iced Tea</td>
+				<td>$1.25</td>
+			</tr>
+		</table>
+		</div>	
+	</div>
+		
+	<footer>
+		<p>1881 Palindrome Avenue; St. John, Nebraska 58785</p>
+		<p>1-646-555-2002</p>
+	</footer>
+		
+</body>
+</html>

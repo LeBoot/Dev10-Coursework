@@ -1,0 +1,68 @@
+/*
+Creator: Ben
+Date created: 23 OCT 2019
+Date last modified: 23 OCT 2019
+*/
+
+body {
+    background-color: #fef9ff;
+    font-family: arial, helvetica, sans-serif;
+    color: #0d1f2d;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+header, footer {
+	background-color: #5b7d87;
+	color: #fef9ff;
+	height: 100px;
+	text-align: center;
+	padding: 30px 10px 30px 10px;
+	font-size: 1.5em
+}
+
+nav {
+	margin-top: 4px;
+	border-top: 3px dashed #546a7b;
+	border-bottom: 3px dashed #546a7b;
+}
+
+nav a {
+    background-color: #5b7d87;
+    color: #fef9ff;
+    padding: 8px;
+    border: thin solid #0d1f2d;
+    text-decoration: none;
+    text-align: center;
+	display: bock; /*This forces in-line elements to act like block elements*/
+	margin: 20px;
+	width: 100px;
+	float: left;
+}
+
+nav a:hover {
+	background-color: #fef9ff;
+	color: #5b7d87;
+}
+
+nav a:active {
+	font-weight: bold;
+}
+
+.clear-float {
+	clear:both;
+}
+
+article img {
+	width:250px;
+	float:left;
+	margin-right:10px;
+}
+
+.right-content {
+	float:left;
+}
+
+article {
+	margin-bottom: 16px;
+}

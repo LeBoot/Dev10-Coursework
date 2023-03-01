@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+Name: Refresher Course, To-Do List, Stretch Goal (iteration 2)
+Author: Leboutillier
+Date Created: 16 NOV 2019
+Date Modified: 17 NOV 2019
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<title>To-Do List</title>
+	<style>
+		.alert {margin: 8px 8px;}
+		h2 {font-family: cursive;}
+		body {margin-top: 20px;}
+	</style>
+</head>
+<body onload="minDate()">
+	<div class="container" style="max-width: 700px">
+	  <h2 style="text-align: center;">To-Do List</h2>
+	  <form onsubmit="return createAlert()">
+		<div class="form-group">
+		  <label for="task">Task</label>
+		  <input type="text" class="form-control" id="task" required>
+		</div>
+		<div class="form-group">
+		  <label for="date">Deadline Date</label>
+		  <input type="date" class="form-control" id="date" min="2019-11-16" required>
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	  </form>
+	</div>
+	<hr/ style="max-width: 85%;">
+	<div class="container">
+		<div class="row" id="alertsList">
+			<div class="alert alert-secondary alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Bake a cake
+				<br/> 7 day(s)
+			</div>
+			<div class="alert alert-secondary alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Travel to England, Ireland, and Iceland
+				<br/> 14 day(s)
+			</div>
+			<div class="alert alert-danger alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Laundry
+				<br/> 1 day(s)
+			</div>
+			<div class="alert alert-warning alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Get a car wash
+				<br/> 4 day(s)
+			</div>
+			<div class="alert alert-danger alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Buy a bike
+				<br/> 2 day(s)
+			</div>
+			<div class="alert alert-warning alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Take out the trash and recycling
+				<br/> 5 day(s)
+			</div>
+			<div class="alert alert-warning alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Open a bank account
+				<br/> 6 day(s)
+			</div>
+			<div class="alert alert-warning alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Run a marathon
+				<br/> 3 day(s)
+			</div>
+			<div class="alert alert-secondary alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Swim the English Channel
+				<br/> 23 day(s)
+			</div>
+			<div class="alert alert-danger alert-dismissible">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				Learn Bootstrap
+				<br/> 1 day(s)
+			</div>
+		</div>
+	</div>
+<script>
+	function minDate() {
+		var d = new Date(); //retrieves today's date from computer
+		var dd = d.getDate()+1; //today's date + 1
+		var mm = d.getMonth()+1; //because January is 0
+		var yyyy = d.getFullYear();
+		if (dd < 10) {dd = "0"+dd};
+		if (mm < 10) {mm = "0"+mm};
+		var tomorrowDate = yyyy+"-"+mm+"-"+dd;
+		document.getElementById("date").createAttribute("min", tomorrowDate);
+	}
+	
+	function createAlert() {
+		const taskResponse = document.getElementById("task").value;
+		const dateResponse = document.getElementById("date").value;
+		var newDiv = document.createElement("div");	
+			newDiv.innerHTML = taskResponse + dateResponse
+			document.getElementById("alertsList").appendChild(newDiv);
+		return false;
+	}
+</script>
+</body>
+</html>
+
+
+<!--
+newDiv.innerHTML = '<div class="alert alert-primary alert-dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button>taskResponse<br/> 1 day(s)</div>';
+-->

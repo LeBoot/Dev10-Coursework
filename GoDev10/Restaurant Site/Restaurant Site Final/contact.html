@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--
+Name: contact.html, (Restaurant Site 3)
+Author: Leboutillier
+Date Created: 26 OCT 2019
+Date Modified: 26 OCT 2019
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="restaurantStyles.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Contact Us</title>
+	<style>
+		body {
+			background-color: rgb(216, 239, 243); <!--#d8eff3, powderblue-90%-->
+		}
+		#divForm {
+			max-width:90%;
+		}
+		#form1 {
+			margin:auto;
+			padding: 35px 0px;
+		}
+		input[type=text], input[type=email], select, #addlinfo {
+			width: 100%;
+			max-width: 350px;
+			padding: 12px;
+			border: 1px solid grey;
+			border-radius: 4px;
+			resize: vertical;
+		}
+		button {
+			border: 1px solid grey;
+			font-size: 14px;
+			background-color:white;
+			color: black;
+			border-radius: 4px;
+			padding: 6px 12px;
+		}
+		button:hover {
+			background-color:lightgrey;
+		}
+		label {
+			padding: 12px 12px 12px 0;
+			display: inline-block;
+			font-weight: normal;
+		}
+		#req1, #req2, #req3 {
+			font-weight: bold;
+		}
+		#boldFields {
+			text-align: center;
+			font-weight: bold;
+			font-size: 1.4em;
+			margin-top: 20px;
+		}
+		#submissionSent {
+			display:none;
+			text-align:center;
+			margin-top:50px;
+			margin-bottom:50px;
+		}
+		#divBtn {
+			text-align:center;
+		}
+	</style>
+</head>
+	
+<body>
+	<header>
+		<noscript>
+			Note: This website works best when JavaScript is enabled!
+		</noscript>
+		<p>Boudreaux's Fine Dining</p>
+		<div id="bigNews">
+			<h1>Big News!</h1>
+			<h3>New Location Coming Soon!</h3>
+		</div>
+	</header>
+		
+	<nav>
+		<a class="btn" href="index.html" style="width:50px;"><i id="homeIcon" class="fa fa-home"></i></a>
+		<a class="btn" href="menu.html">Menu</a>
+		<a class="btn" href="contact.html">Contact Us</a>
+	</nav>
+
+	<div class="container">
+	<div id="caro" class="carousel slide" data-ride="carousel" data-interval="7000" data-pause="hover">
+		<div class="carousel-inner">
+			<div class="item active">
+				<h3>We're opening a new location!</h3>
+			</div>
+			<div class="item">
+				<h3>We're rolling out our seasonal menu, with special options for this season.</h3>
+			</div>
+			<div class="item">
+				<h3>The Drink of the Month is SG Special Brew.</h3>
+			</div>
+		</div>
+		<a class="left carousel-control" href="#caro" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#caro" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	</div>
+	
+	<div class="container" id="submissionSent">
+		<h1>Thank you for your submission!</h1>
+	</div>
+		
+	<div class="container" id="divForm">
+		<p id="boldFields">Bold fields are required.</p>
+		<form class="form-horizontal" onsubmit="return validateItems();" id="form1">
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="name" id="req1">Name:</label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="name" name="name" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="phone" id="req2">Phone:</label>
+				<div class="col-sm-5">
+					<input type="text" class="form-control" id="phone" name="phone" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="email" id="req3">Email:</label>
+				<div class="col-sm-5">
+					<input type="email" class="form-control" id="email" name="email" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="reason">Reason for Inquiry:</label>
+				<div class="col-sm-5">
+					<select id="reason" name="reason">
+						<option value="Catering" selected>Catering</option>
+						<option value="Party">Private Party</option>
+						<option value="Feedback">Feedback</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="addlinfo">Additional Information:</label>
+				<div class="col-sm-5">
+					<textarea type="text" class="form-control" id="addlinfo" name="addlinfo"></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="beenbefore">Have you been to the restaurant?</label>
+				<div class="col-sm-5">
+					<label for="choice1">
+						<input type="radio" id="choice1" name="beenbefore" value="yes"/>&nbsp; Yes &nbsp;
+						</label>				
+					<label for="choice2">
+						<input type="radio" id="choice2" name="beenbefore" value="no"/>&nbsp; No &nbsp;
+						</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="bestdays">Best days to contact you:</label>
+				<div class="col-sm-5">						
+					<label type="checkbox-inline" for="monday">
+						<input type="checkbox" id="monday" name="bestdays" value="monday" />&nbsp; M &nbsp;	
+						</label>		
+					<label type="checkbox-inline" for="tuesday">
+						<input type="checkbox" id="tuesday" name="bestdays" value="tuesday" />&nbsp; T &nbsp;
+						</label>
+					<label type="checkbox-inline" for="wednesday">
+						<input type="checkbox" id="wednesday" name="bestdays" value="wednesday" />&nbsp; W &nbsp;
+						</label>
+					<label type="checkbox-inline" for="thursday">
+						<input type="checkbox" id="thursday" name="bestdays" value="thursday" />&nbsp; R &nbsp;
+						</label>
+					<label type="checkbox-inline" for="friday">
+						<input type="checkbox" id="friday" name="bestdays" value="friday" />&nbsp; F &nbsp;
+						</label>			
+				</div>
+			</div>
+			<div id="divBtn" class="form-group">        
+				<div>
+					<button type="submit">Send Request</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<script>
+		function validateItems() {
+			const inputName = document.getElementById("name").value;
+			const inputEmail = document.getElementById("email").value;
+			const inputPhone = document.getElementById("phone").value;
+			if (((inputName != "") || (inputEmail != "" )) || (inputPhone != "")) {
+				alert ("Your submission is valid!  We'll get back to you soon.");
+			}
+			document.getElementById("name").value = "";
+			document.getElementById("email").value = "";
+			document.getElementById("phone").value = "";
+			document.getElementById("submissionSent").style.display = "block";
+			return false;
+		}
+	</script>
+
+	<footer>
+		<p>1881 Palindrome Avenue; St. John, Nebraska 58785</p>
+		<p>1-646-555-2002</p>
+	</footer>
+
+</body>
+</html>

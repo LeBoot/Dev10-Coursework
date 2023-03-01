@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+Name: index.html, (Restaurant Site 3)
+Author: Leboutillier
+Date Created: 25 OCT 2019
+Date Modified: 26 OCT 2019
+-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="restaurantStyles.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Home Page</title>
+	<style>
+		body {
+			background-color: #fcfce9; <!--LightGoldenRodYellow-95%-->
+		}	
+		#about {
+			color: black;
+			text-align: justify;
+			max-width: 900px;
+			margin: auto;
+			padding-top: 35px;
+			padding-bottom: 35px;
+		}
+	</style>
+</head>
+	
+<body>
+	<header>
+		<noscript>
+			Note: This website works best when JavaScript is enabled!
+		</noscript>
+		<p>Boudreaux's Fine Dining</p>
+		<div id="bigNews">
+			<h1>Big News!</h1>
+			<h3>New Location Coming Soon!</h3>
+		</div>
+	</header>
+		
+	<nav>
+		<a class="btn" href="index.html" style="width:50px;"><i id="homeIcon" class="fa fa-home"></i></a>
+		<a class="btn" href="menu.html">Menu</a>
+		<a class="btn" href="contact.html">Contact Us</a>
+	</nav>
+
+	<div class="container">
+	<div id="caro" class="carousel slide" data-ride="carousel" data-interval="7000" data-pause="hover">
+		<div class="carousel-inner">
+			<div class="item active">
+				<h3>We're opening a new location!</h3>
+			</div>
+			<div class="item">
+				<h3>We're rolling out our seasonal menu, with special options for this season.</h3>
+			</div>
+			<div class="item">
+				<h3>The Drink of the Month is SG Special Brew.</h3>
+			</div>
+		</div>
+		<a class="left carousel-control" href="#caro" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#caro" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	</div>
+		
+	<div class="container" style="margin-top:35px;">
+		<img src="restaurant_image_2.jpg" alt="Photo of restaurant." class="img-responsive" style="img-fluid; border-radius:6px; display:block; margin:auto;" />
+	</div>
+		
+	<div class="container" id="about">
+		<p>Boudreaux's Fine Dining is <strong><em>the</em></strong> place to eat in St. John, Nebraska.
+			We are family-owned and -operated, and we have been serving locals since last June.
+			After finally passing health inspection, Boudreaux's Fine Dining is back in business, baby!</p>
+		<p>But if that's not exciting enough, here are some immortal words from <i>Ulysses</i> by Lord Tennyson:
+			"Come, my friends, 'tis is not too late to seek a newer world.
+			Push off, and sitting well in order smite
+			The sounding furrows; for my purpose holds
+			To sail beyond the sunset, and the baths
+			Of all the western stars, until I die.</p>
+		<p>"It may be that the gulfs will wash us down:
+			It may be we shall touch the Happy Isles,
+			And see the great Achilles, whom we knew.
+			Tho' much is taken, much abides; and tho'
+			We are not now that strength which in old days
+			Moved earth and heaven, that which we are, we are;
+			One equal temper of heroic hearts,
+			Made weak by time and fate, but strong in will
+			To strive, to seek, to find, and not to yield."</p>
+	</div>
+		
+	<footer>
+		<p>1881 Palindrome Avenue; St. John, Nebraska 58785</p>
+		<p>1-646-555-2002</p>
+	</footer>
+
+</body>
+</html>

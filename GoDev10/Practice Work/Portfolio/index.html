@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+Name: Ben
+Date Created: 22 OCT 2019
+Most Recent Revision: 23 OCT 2019
+-->
+
+<html lang="en">
+	<head>
+		<title>Ben's Portfolio</title>
+		
+		<link href="styles/main.css" rel="stylesheet" type="text/css" />
+		
+		<style>
+			caption {
+				font-weight: bold;
+				font-size: 1.2em;
+				margin-bottom: 8px;
+			}
+			table, th, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+				padding: 5px 10px;
+			}
+			table {
+				width: 100%;
+				margin: auto; <!-- this centers the table -->
+			}
+			tr {
+				height: 30 px;
+			}
+			th {
+				background-color: lightgreen;
+			}
+			tbody tr:nth-child(odd) {
+				background-color: #e4c3ad;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<header> <!-- This is the main title -->
+			<h1>Portfolio for Ben</h1>
+		</header>
+		
+		<nav class="border"> <!-- The nav element includes navigation buttons or links -->
+			<p><a href="projects.html">Projects</a></p>
+			<p><a href="contact.html">Contact</a></p>
+			<p><a href="testimonials.html">Testimonials</a></p>
+			<div class="clear-float"></div>
+		</nav>
+		
+		<section>
+		
+			<article id="about" class="border">
+				<h2><i>About me</i></h2>
+				
+				<img src="images/Headshot.jpg" alt="Headshot of Author" />
+				
+				<p>In this paragraph, I am going to make some text <strong>bold text</strong>, some text <i>italics text</i>, and some text both <strong><i>bold and italics</i></strong>.</p>
+				<p>In this paragraph, I am going to play around with background colors and borders: Text A will be <span style="color: white; background-color: blue">white text with a blue background</span>.
+					Text B will be <span style="background-color: yellow">text with a yellow background</span>.
+					Text C will be <span style="background-color: lightblue; border: thin solid red;">text with a lightblue background and solid red border</span>.
+					Finally, Text D will be <span style="background-color: gray; border: thin solid purple">text with a gray background and solid purple border</span>.
+				</p>
+				<div class="clear-float"></div>  <!-- This keeps the next text from riding up -->
+			</article>
+			
+			<article id="experience">
+				<h2><em>Past Experiences</em></h2>
+				
+				<img src="images/Bicycle-Cropped.jpg" alt="Author and bicycle" />
+				<div class="right-content">
+				<table border="1">
+					<caption>Employment History</caption>
+					<thead>
+					<tr>
+						<th>Years Employed</th>
+						<th>Employer</th>
+						<th>Title</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>2014-2018</td>
+						<td>Sarasota Memorial Hospital</td>
+						<td>Multi-Skilled Technician</td>
+					</tr>
+					
+					<tr>
+						<td>2014-2019</td>
+						<td>TFC Motorsports</td>
+						<td>Data Analyst</td>
+					</tr>
+					
+					<tr>
+						<td>2016</td>
+						<td>New River Adventures</td>
+						<td>Raft Guide</td>
+					</tr>
+					</tbody>
+				</table>
+				</div>
+				<div class="clear-float"></div>
+			</article>
+			
+			<article id="hobbies">
+				<h2><i>Hobbies</i></h2>
+				
+				<img src="images/Boat-Cropped.jpg" alt="Large Sailboat" />
+				<div class="right-content">
+				<ul>
+					<li>Favorite Authors</li>
+						<ol>
+							<li>Dan Brown</li>
+							<li>Charles Dickens</li>
+							<li>Ken Bailey</li>
+						</ol>
+					<li>Favorite Games</li>
+						<ol>
+							<li>Scrabble</li>
+							<li>Draughts</li>
+							<li>Pin the Tail on the Donkey</li>
+						</ol>
+				</ul>
+
+				<ul>
+					<li>Sports</li>
+						<ul>
+							<li>Soccer</li>
+							<li>Rugby</li>
+							<li>Hockey</li>
+						</ul>
+					<li>Outdoor Activities</li>
+						<ul>
+							<li>Gardening</li>
+							<li>Hay Toss</li>
+							<li>Weight Over Bar</li>
+						</ul>				
+				</ul>
+				</div>
+				<div class="clear-float"></div>
+			</article>
+			
+		</section>
+	
+		<footer>
+			<p>&copy; 2019 Ben Leboutillier.  All rights reserved. </p>
+		</footer>
+	</body>
+
+
+
+</html>
