@@ -1,59 +1,24 @@
-/DogGenetics/target/
-/RockPaperScissors/target/
-/SummativeSums/target/
-/FactorizerRefactored/target/
-/InterestCalculatorRefactored/target/
-/LuckySevensRefactored/target/
-/RockPaperScissorsRefactored/target/
-/SimpleCaclulator/target/
-/SimpleCalculator2/target/
-/ShapesAndPerimeters/target/
-/StateCapitals1/target/
-/StateCapitals2/target/
-/StudentQuizScores/target/
-/MyInheritanceLab/target/
-/ClassRoster/target/
-/AddressBook/target/
-/mp3Project/target/
-/IOTest/target/
-/Section03UnitTests/nbproject/
-/Section03UnitTests/target/
-/Week02/Lesson10 Exceptions/ClassRoster/nbproject/
-/Week02/Lesson10 Exceptions/AddressBook/nbproject/
-/Week02/Summative02 mp3Project/nbproject/
-/DateTimeProject/target/
-/EnumPractice/target/
-/EnumPractice2/target/
-/EnumPractice1/target/
-/PracticeWithExceptions/target/
-/BigDecimalCodeAlong/target/
-/LambdaCodeAlong/target/
-/VendingMachine/target/
-/EnumPractice3/target/
-/VendingMachine/nbproject/
-/InterestCalculatorRefactoredBD/target/
-/Section04UnitTests/nbproject/
-/Section04UnitTests/target/
-/Week04/bl_VendingMachineRefactorSpring/target/
-/FlooringMastery/target/
-/AAPractice/target/
-/FlooringMastery/nbproject/
-/bl_FlooringMasteryTrialCopy_jar_1.0-SNAPSHOT/target/
-/Week07/JDBCExampleStarter/target/
-/Week07/JDBCTemplateExampleStarter/JDBCTemplateExampleStarter/target/
-/Week07/JDBCTComplexExampleStarter/JDBCTComplexExampleStarter/target/
-/Week07/JDBCTComplexExampleStarter/JDBCTComplexExampleStarter/nbproject/
-/SimpleREST/target/
-/ToDoAPI/target/
-/BullsAndCowsTest/target/
-/BullsAndCowsTest2/target/
-/BullsAndCows/target/
-/Week07/BullsAndCows/nbproject/
-/BullsAndCowsSummative/nbproject/
-/BullsAndCowsSummative/target/
-/Week09/classroster/classroster/nbproject/
-/Week09/Summative/field-agent-spec-java-backend-provided/FieldAgent/target/
-/TheSymmetryPodcast/target/
-/MailApiPractice/target/
-/TheSymmetryPodcast/nbproject/
-/TSPThymeleafPractice/target/
+### Java ###
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Other
+*.mp3
